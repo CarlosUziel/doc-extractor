@@ -6,9 +6,8 @@ from typing import Any, Dict, Literal, Optional, cast
 
 import fitz
 import streamlit as st  # type: ignore
-from PIL import Image
-
 from config.logger import log
+from PIL import Image
 from pipelines.doc_extraction import run_extraction_pipeline
 
 st.title("Document Extractor")
@@ -40,17 +39,22 @@ def _get_key_from_display_name(
     """Gets the key from a display name in a dictionary of options.
 
     Args:
-        display_name: The display name to search for.
-        options: A dictionary where keys are internal values and values are display names.
+        display_name (Optional[str]): The display name to search for.
+        options (Dict[str, str]): A dictionary where keys are internal values and
+                                  values are display names.
 
     Returns:
-        The key corresponding to the display name, or None if not found.
+        Optional[str]: The key corresponding to the display name, or None if not
+                       found.
     """
+    # 1. Handle None input for display_name.
     if display_name is None:
         return None
+    # 2. Iterate through options to find the matching display name.
     for key, value in options.items():
         if value == display_name:
             return key
+    # 3. Return None if no match is found.
     return None
 
 
@@ -122,22 +126,35 @@ def display_ocr_previews(
 ) -> None:
     """Recursively traverses the data and displays OCR previews for fields with bounding boxes.
 
+    This function iterates through a (potentially nested) dictionary representing
+    extracted document data. When it encounters a field ending with "_bbox" and its
+    corresponding data field, it attempts to display the field name, its value,
+    the bounding box coordinates, and a cropped image preview from the original
+    document. It handles multi-page documents by looking for a `page_number`
+    within the bounding box data.
+
     Args:
-        data: The data structure (likely a nested dictionary) containing extracted information
-              and bounding box details.
-        pil_images: A list of PIL.Image.Image objects representing the pages of the
-                    processed document.
-        current_path: The current path in the nested data structure, used for
-                      generating descriptive field names.
+        data (Any): The data structure (likely a nested dictionary) containing
+                    extracted information and bounding box details.
+        pil_images (list[Image.Image]): A list of PIL.Image.Image objects
+                                        representing the pages of the processed
+                                        document.
+        current_path (str, optional): The current path in the nested data
+                                      structure, used for generating descriptive
+                                      field names. Defaults to "".
     """
+    # 1. Check if images are available for preview.
     if not pil_images:
         st.warning("No processed images available for OCR preview.")
         return
 
+    # 2. Process dictionary data.
     if isinstance(data, dict):
         for key, value in data.items():
+            # 2a. Check for bounding box fields.
             if key.endswith("_bbox") and value is not None:
                 actual_field_key = key[:-5]
+                # 2b. Ensure the corresponding data field exists.
                 if actual_field_key in data:
                     field_value = data[actual_field_key]
                     bbox_coords = value
@@ -150,7 +167,7 @@ def display_ocr_previews(
 
                     st.markdown("---")
 
-                    # Determine the image to crop from based on page_number
+                    # 2c. Determine the correct image page for cropping.
                     image_to_crop = None
                     page_number_info = ""
                     if (
@@ -167,12 +184,14 @@ def display_ocr_previews(
                                 f"Page index {page_idx} out of range for field "
                                 f"{full_field_path}."
                             )
-                            image_to_crop = pil_images[0]
+                            image_to_crop = pil_images[0]  # Fallback to first page
                             page_number_info = " (Page 1 - Fallback)"
                     else:
+                        # Fallback to the first page if page_number is not specified or invalid.
                         image_to_crop = pil_images[0]
                         page_number_info = " (Page 1 - Fallback)"
 
+                    # 2d. Display field information and preview in columns.
                     col1, col2, col3, col4 = st.columns([3, 3, 3, 2])
 
                     with col1:
@@ -190,11 +209,12 @@ def display_ocr_previews(
                                 f"`({bbox_coords['xmin']},{bbox_coords['ymin']},"
                                 f"{bbox_coords['xmax']},{bbox_coords['ymax']})`"
                             )
+                            # 2e. Crop and display image preview if possible.
                             if image_to_crop:
                                 try:
                                     img_width, img_height = image_to_crop.size
+                                    padding = 10  # Padding around the bounding box
                                     # Scale normalized coordinates (0-1000) to absolute pixel values
-                                    padding = 10
                                     xmin_abs = max(
                                         0,
                                         int((bbox_coords["xmin"] / 1000) * img_width)
@@ -222,7 +242,7 @@ def display_ocr_previews(
                                         xmax_abs,
                                         ymax_abs,
                                     )
-                                    cropped_image = image_to_crop.crop(int_bbox)  # type: ignore
+                                    cropped_image = image_to_crop.crop(int_bbox)
                                     with col4:
                                         st.markdown("**Preview:**")
                                         st.image(cropped_image, width=150)
@@ -234,9 +254,11 @@ def display_ocr_previews(
                                     st.caption("Image for preview not available.")
                         else:
                             st.markdown("**BBox:**\nInvalid format")
+            # 2f. Recursively call for nested dictionaries.
             elif isinstance(value, dict):
                 new_path = f"{current_path}{key}." if current_path else f"{key}."
                 display_ocr_previews(value, pil_images, new_path)
+            # 2g. Recursively call for items in lists if they are dictionaries.
             elif isinstance(value, list):
                 for i, item in enumerate(value):
                     if isinstance(item, dict):
@@ -252,16 +274,19 @@ def date_converter(o: Any) -> str:
     """Converts date objects to ISO format strings for JSON serialization.
 
     Args:
-        o: The object to convert.
+        o (Any): The object to convert.
 
     Returns:
-        The ISO format string if the object is a date, otherwise raises TypeError.
+        str: The ISO format string if the object is a date, otherwise raises TypeError.
 
     Raises:
         TypeError: If the object is not a date object and cannot be serialized.
     """
+    # 1. Check if the object is an instance of date.
     if isinstance(o, date):
+        # 2. Convert date to ISO format string.
         return o.isoformat()
+    # 3. Raise TypeError if the object is not a date.
     raise TypeError(f"Object of type {o.__class__.__name__} is not JSON serializable")
 
 

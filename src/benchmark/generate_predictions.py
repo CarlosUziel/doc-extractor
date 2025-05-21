@@ -3,6 +3,8 @@ from pathlib import Path
 from typing import Literal
 
 import typer
+from config.logger import log
+from pipelines.doc_extraction import run_extraction_pipeline
 from rich.console import Console
 from rich.progress import (
     BarColumn,
@@ -13,9 +15,6 @@ from rich.progress import (
     TimeElapsedColumn,
     TimeRemainingColumn,
 )
-
-from config.logger import log
-from pipelines.doc_extraction import run_extraction_pipeline
 
 app = typer.Typer()
 
@@ -34,11 +33,12 @@ def sanitize_model_name(model_name: str) -> str:
     with most filesystems when using the model name in paths.
 
     Args:
-        model_name: The original model name string.
+        model_name (str): The original model name string.
 
     Returns:
-        A sanitized string suitable for use in file or directory names.
+        str: A sanitized string suitable for use in file or directory names.
     """
+    # 1. Replace characters that are problematic for file systems.
     return model_name.replace("/", "_").replace(":", "_")
 
 
@@ -71,34 +71,43 @@ def main(
         resolve_path=True,
     ),
     limit: int = typer.Option(
-        None,
+        None,  # Changed from None to allow typer to handle default correctly if not provided
         "--limit",
         "-l",
         help="Limit the number of files to process per document type.",
         min=1,
+        show_default=False,  # Explicitly hide default if it's truly optional and no default value is desired
     ),
-):
+) -> None:
     """
-    Processes PDF documents from specified input directories, extracts information using a
-    configurable Large Language Model (LLM), and saves the structured output as JSON files.
+    Processes PDF documents from specified input directories, extracts information
+    using a configurable Large Language Model (LLM), and saves the structured
+    output as JSON files.
 
-    The script iterates through predefined document types (e.g., "epc_certificate", "property_expose")
-    and processes PDF files found in corresponding subdirectories of the `data_base_path`.
-    For each PDF, it calls an extraction pipeline and stores the resulting JSON data.
+    The script iterates through predefined document types (e.g., "epc_certificate",
+    "property_expose") and processes PDF files found in corresponding
+    subdirectories of the `data_base_path`. For each PDF, it calls an extraction
+    pipeline and stores the resulting JSON data.
 
     Output Structure:
         The extracted JSON for each PDF is saved to:
         `annotations_base_path/{document_type}/{sanitized_model_name}/{original_pdf_stem}.json`
-        where `sanitized_model_name` is a filesystem-friendly version of the `llm_model` name.
+        where `sanitized_model_name` is a filesystem-friendly version of the
+        `llm_model` name.
 
-    CLI Arguments:
-    - `llm_provider`: Specifies the LLM provider to use (e.g., "openai", "gemini").
-    - `llm_model`: Defines the specific model name for the chosen provider.
-    - `data_base_path`: The root directory containing subfolders for different document types
-                        (e.g., ".data/EPC certificates", ".data/property expose").
-    - `annotations_base_path`: The root directory where generated JSON annotations will be stored.
-    - `limit`: An optional integer to restrict processing to the first N PDF files found
-               within each document type's subdirectory, useful for testing.
+    Args:
+        llm_provider (LlmProviderChoice): Specifies the LLM provider to use
+            (e.g., "openai", "gemini"). Defaults to LlmProviderChoice.GEMINI.
+        llm_model (str): Defines the specific model name for the chosen provider.
+            Defaults to "gemini-2.5-pro-preview-05-06".
+        data_base_path (Path): The root directory containing subfolders for
+            different document types (e.g., ".data/EPC certificates",
+            ".data/property expose"). Defaults to `PROJECT_ROOT / ".data"`.
+        annotations_base_path (Path): The root directory where generated JSON
+            annotations will be stored. Defaults to `PROJECT_ROOT / "annotations"`.
+        limit (int, optional): An optional integer to restrict processing to the
+            first N PDF files found within each document type's subdirectory,
+            useful for testing. Defaults to None (no limit).
 
     Example Usage:
         python src/benchmark/generate_predictions.py \\
@@ -108,53 +117,54 @@ def main(
             --annotations-base-path annotations \\
             --limit 10
     """
+    # 1. Log initial parameters.
     log.info(
-        f"Starting prediction generation with provider: {llm_provider.value}, model: {llm_model}"  # Use .value
+        f"Starting prediction generation with provider: {llm_provider.value}, model: {llm_model}"
     )
     log.info(f"Input data path: {data_base_path}")
     log.info(f"Output annotations path: {annotations_base_path}")
 
-    # Mapping document type keys (used in code and for output folder names)
-    # to the actual folder names within the .data directory.
+    # 2. Define mapping from document type keys to data folder names.
     document_types_map: dict[Literal["epc_certificate", "property_expose"], str] = {
         "epc_certificate": "EPC certificates",
         "property_expose": "property expose",
     }
 
+    # 3. Sanitize the model name for use in file paths.
     sanitized_model = sanitize_model_name(llm_model)
 
-    # Define custom progress bar columns with more flair
+    # 4. Configure and initialize the Rich progress bar.
     custom_progress_columns = [
-        SpinnerColumn(spinner_name="dots", style="magenta"),  # Added spinner
+        SpinnerColumn(spinner_name="dots", style="magenta"),
         TextColumn("[progress.description]{task.description}"),
         BarColumn(
             bar_width=None,
             style="yellow",
             complete_style="green",
             finished_style="dim green",
-        ),  # Styled Bar
+        ),
         MofNCompleteColumn(),
         TextColumn("eta"),
         TimeRemainingColumn(),
-        TimeElapsedColumn(),  # Added TimeElapsedColumn
+        TimeElapsedColumn(),
     ]
+    progress_console = Console()
 
-    progress_console = Console()  # Create a Rich Console for the progress bar
-
-    with Progress(
-        *custom_progress_columns, console=progress_console
-    ) as progress:  # Use the new console
+    # 5. Start the main processing loop with the progress bar.
+    with Progress(*custom_progress_columns, console=progress_console) as progress:
         overall_task_description = f"Processing all document types for model: [bold blue]{sanitized_model}[/bold blue]"
         overall_task = progress.add_task(
             overall_task_description, total=len(document_types_map)
         )
 
+        # 6. Iterate over each document type.
         for doc_type_key, data_folder_name in document_types_map.items():
             progress.update(
                 overall_task,
                 description=f"Overall Progress (Current: [bold cyan]{doc_type_key}[/])",
             )
 
+            # 6a. Define paths for current document type.
             current_data_path = data_base_path / data_folder_name
             output_dir = annotations_base_path / doc_type_key / sanitized_model
 
@@ -164,6 +174,7 @@ def main(
             log.info(f"Looking for PDFs in: {current_data_path}")
             log.info(f"Output will be saved to: {output_dir}")
 
+            # 6b. Validate data directory.
             if not current_data_path.exists() or not current_data_path.is_dir():
                 log.warning(
                     f"Data directory not found or is not a directory: {current_data_path}"
@@ -171,9 +182,10 @@ def main(
                 progress.update(overall_task, advance=1)
                 continue
 
+            # 6c. Create output directory if it doesn't exist.
             output_dir.mkdir(parents=True, exist_ok=True)
 
-            # Collect PDF files to get a total for the progress bar
+            # 6d. Collect PDF files to process.
             pdf_files_to_process = list(current_data_path.rglob("*.pdf"))
 
             if not pdf_files_to_process:
@@ -181,19 +193,18 @@ def main(
                 progress.update(overall_task, advance=1)
                 continue
 
-            # Apply limit if specified
+            # 6e. Apply limit if specified.
             if limit is not None:
                 pdf_files_to_process = pdf_files_to_process[:limit]
 
-            if (
-                not pdf_files_to_process
-            ):  # If limit was 0 or less, or no files after slicing
+            if not pdf_files_to_process:
                 log.warning(
                     f"No PDF files to process for {doc_type_key} after applying limit."
                 )
                 progress.update(overall_task, advance=1)
                 continue
 
+            # 6f. Add a new task to the progress bar for the current document type.
             doc_type_initial_description = (
                 f"Preparing [bold magenta]{doc_type_key}[/] files"
             )
@@ -201,9 +212,11 @@ def main(
                 doc_type_initial_description, total=len(pdf_files_to_process)
             )
 
+            # 7. Iterate over PDF files for the current document type.
             for pdf_file_path in pdf_files_to_process:
                 output_file_path = output_dir / f"{pdf_file_path.stem}.json"
 
+                # 7a. Skip if output file already exists.
                 if output_file_path.exists():
                     log.debug(
                         f"Output file already exists, skipping: {output_file_path}"
@@ -220,6 +233,7 @@ def main(
                     description=f"Processing [bold magenta]{doc_type_key}[/]: [cyan]{pdf_file_path.name}[/]",
                 )
 
+                # 7b. Run extraction pipeline with retries.
                 extraction_result = None
                 last_exception = None
                 for attempt in range(3):
@@ -227,7 +241,7 @@ def main(
                         extraction_result = run_extraction_pipeline(
                             file_path=pdf_file_path,
                             document_type=doc_type_key,
-                            llm_provider=llm_provider.value,
+                            llm_provider=llm_provider.value,  # Ensure .value is used for Enum
                             llm_model=llm_model,
                         )
                         if extraction_result:
@@ -243,6 +257,7 @@ def main(
                                 exc_info=True,
                             )
 
+                # 7c. Save extraction result if successful.
                 if extraction_result:
                     json_output = extraction_result.model_dump_json(indent=2)
                     with open(output_file_path, "w", encoding="utf-8") as f:
@@ -259,7 +274,7 @@ def main(
                         )
                 progress.update(doc_type_task, advance=1)
 
-            # Ensure the task is marked as complete if loop finishes early due to skips
+            # 8. Mark document type task as complete.
             progress.update(
                 doc_type_task,
                 completed=len(pdf_files_to_process),
@@ -267,12 +282,14 @@ def main(
             )
             progress.update(overall_task, advance=1)
 
+        # 9. Mark overall task as complete.
         progress.update(
             overall_task,
             completed=len(document_types_map),
             description=f"All document types for [bold blue]{sanitized_model}[/bold blue] processed :party_popper:",
         )
 
+    # 10. Log completion of the script.
     log.info("Prediction generation finished.")
 
 
