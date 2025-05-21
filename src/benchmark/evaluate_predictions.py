@@ -11,7 +11,11 @@ from rich.panel import Panel
 from rich.text import Text
 
 from config.logger import log
-from config.schema import EPCCertificateDetails, PropertyExposeDetails
+from config.schema import (
+    AddressDetails,
+    EPCCertificateDetails,
+    PropertyExposeDetails,
+)  # MODIFIED: Added AddressDetails
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 REPORTS_DIR = PROJECT_ROOT / "reports"
@@ -34,6 +38,30 @@ DOC_TYPE_FRIENDLY_NAMES: Dict[str, str] = {
     "epc_certificate": "EPC Certificate",
     "property_expose": "Property Expose",
 }
+
+
+def get_schema_keys(doc_type_key: str) -> List[str]:
+    """Retrieves and flattens schema keys for a given document type."""
+    schema_class = DOC_TYPE_TO_SCHEMA[doc_type_key]
+    flattened_keys: List[str] = []
+
+    for field_name, field_info in schema_class.model_fields.items():
+        if (
+            field_name.endswith("_bbox") or field_name == "realty_features"
+        ):  # Exclude bbox and realty_features
+            continue
+
+        if field_name == "realty_address":
+            # Unnest AddressDetails fields, works even if realty_address is Optional and defaults to None
+            address_model_fields = AddressDetails.model_fields
+            for sub_key in address_model_fields.keys():
+                if not sub_key.endswith("_bbox"):  # Exclude bbox from sub_keys
+                    flattened_keys.append(
+                        f"{field_name}__{sub_key}"
+                    )  # MODIFIED: Use double underscore
+        else:
+            flattened_keys.append(field_name)
+    return flattened_keys
 
 
 def sanitize_model_name_for_path(model_name: str) -> str:
@@ -95,9 +123,29 @@ def load_prediction_data(
         try:
             with open(json_file, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            processed_file_data = {"file_stem": json_file.stem}
+            processed_file_data: Dict[str, Any] = {
+                "file_stem": json_file.stem
+            }  # Initialize with Any type for values
             for key in schema_keys:
-                processed_file_data[key] = data.get(key, None)
+                # Handle potentially nested keys (e.g., "realty_address__city")
+                if "__" in key and key.startswith(
+                    "realty_address"
+                ):  # MODIFIED: Check for double underscore
+                    parent_key, sub_key = key.split(
+                        "__",
+                        1,  # MODIFIED: Split by double underscore
+                    )  # Split only on the first double underscore
+                    if (
+                        parent_key == "realty_address"
+                    ):  # Ensure we are processing realty_address
+                        # Attempt to get nested value
+                        nested_data = data.get(parent_key, {})
+                        if isinstance(nested_data, dict):
+                            processed_file_data[key] = nested_data.get(sub_key, None)
+                        else:  # Handle cases where realty_address might not be a dict as expected
+                            processed_file_data[key] = None
+                else:
+                    processed_file_data[key] = data.get(key, None)
             all_file_data.append(processed_file_data)
         except Exception as e:
             log.error(f"Error loading or flattening {json_file}: {e}")
@@ -413,11 +461,7 @@ def main(
         for s_model_name_iter in sorted(list(all_found_sanitized_model_names)):
             for doc_type_key in doc_type_keys:
                 doc_type_friendly = DOC_TYPE_FRIENDLY_NAMES[doc_type_key]
-                schema_keys = [
-                    k
-                    for k in DOC_TYPE_TO_SCHEMA[doc_type_key]().model_dump().keys()
-                    if "_bbox" not in k and k != "realty_features"
-                ]
+                schema_keys = get_schema_keys(doc_type_key)
 
                 if not schema_keys:
                     log.error(
@@ -466,11 +510,7 @@ def main(
 
         for doc_type_key in doc_type_keys:
             doc_type_friendly = DOC_TYPE_FRIENDLY_NAMES[doc_type_key]
-            schema_keys = [
-                k
-                for k in DOC_TYPE_TO_SCHEMA[doc_type_key]().model_dump().keys()
-                if "_bbox" not in k and k != "realty_features"
-            ]
+            schema_keys = get_schema_keys(doc_type_key)
 
             if not schema_keys:
                 log.error(
