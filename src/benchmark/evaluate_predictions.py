@@ -1,5 +1,5 @@
-import json
 import csv
+import json
 from pathlib import Path
 from typing import Any, Dict, List, Type
 
@@ -17,7 +17,10 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 REPORTS_DIR = PROJECT_ROOT / "reports"
 
 app = typer.Typer(
-    help="Evaluation script for LLM predictions on document extraction. Analyzes missing values and compares model performance.",
+    help=(
+        "Evaluation script for LLM predictions on document extraction. "
+        "Analyzes missing values and compares model performance."
+    ),
     add_completion=False,
     rich_markup_mode="markdown",
 )
@@ -34,7 +37,16 @@ DOC_TYPE_FRIENDLY_NAMES: Dict[str, str] = {
 
 
 def sanitize_model_name_for_path(model_name: str) -> str:
-    """Sanitizes the model name to be used as a directory name."""
+    """Sanitizes a model name to be filesystem-friendly.
+
+    Replaces characters like '/' and ':' with underscores.
+
+    Args:
+        model_name: The original model name string.
+
+    Returns:
+        A sanitized string suitable for use in file or directory names.
+    """
     return model_name.replace("/", "_").replace(":", "_")
 
 
@@ -44,14 +56,31 @@ def load_prediction_data(
     sanitized_model_name: str,
     schema_keys: List[str],
 ) -> pd.DataFrame:
-    """Loads all predictions for a given model and document type into a DataFrame."""
+    """Loads all prediction JSON files for a given model and document type.
+
+    Constructs a pandas DataFrame where each row corresponds to a JSON file
+    and columns are derived from the provided schema_keys.
+
+    Args:
+        predictions_base_path: The root directory where predictions are stored.
+        doc_type: The specific document type (e.g., "epc_certificate").
+        sanitized_model_name: The filesystem-friendly model name.
+        schema_keys: A list of keys expected in the JSON structure,
+                     which will become columns in the DataFrame.
+
+    Returns:
+        A pandas DataFrame containing the loaded prediction data.
+        Returns an empty DataFrame with 'file_stem' index and schema_keys as columns
+        if the directory or JSON files are not found, or if loading fails.
+    """
     model_doc_type_path = predictions_base_path / doc_type / sanitized_model_name
 
     all_file_data: List[Dict[str, Any]] = []
 
     if not model_doc_type_path.is_dir():
         log.warning(
-            f"Directory not found for model '{sanitized_model_name}', doc_type '{doc_type}': {model_doc_type_path}"
+            f"Directory not found for model '{sanitized_model_name}', "
+            f"doc_type '{doc_type}': {model_doc_type_path}"
         )
         empty_df = pd.DataFrame(columns=["file_stem"] + schema_keys)
         return empty_df.set_index("file_stem")
@@ -87,22 +116,40 @@ def load_prediction_data(
 def generate_missing_values_reports(
     df_model_data: pd.DataFrame,
     model_name: str,  # This is already sanitized (s_model_name_iter)
-    doc_type_friendly_name: str,
-):
-    """Generates and prints reports on missing values, saving them to CSV."""
+    doc_type_friendly_name: str,  # Used for console output
+    doc_type_key: str,  # Used for path generation
+) -> None:
+    """Generates and prints reports on missing values in prediction data.
+
+    This function calculates and saves two types of reports:
+    1.  Per-file missing values: A CSV indicating which fields are missing in each file.
+    2.  Summarized missing values: A CSV showing the percentage of nulls for each field
+        across all files.
+
+    Reports are saved to a subdirectory within the main `REPORTS_DIR`.
+
+    Args:
+        df_model_data: DataFrame containing the prediction data for a specific model
+                       and document type.
+        model_name: The sanitized name of the model being evaluated.
+        doc_type_friendly_name: A user-friendly name for the document type.
+        doc_type_key: The document type key used for path generation.
+    """
     console.rule(
-        f"[bold]Missing Values Analysis for: {model_name} - {doc_type_friendly_name}[/bold]",
+        f"[bold]Missing Values Analysis for: {model_name} - "
+        f"{doc_type_friendly_name}[/bold]",
         style="magenta",
     )
 
     if df_model_data.empty:
         console.print(
-            f"[yellow]No data loaded for {model_name} - {doc_type_friendly_name}. Skipping missing values report.[/yellow]"
+            f"[yellow]No data loaded for {model_name} - {doc_type_friendly_name}. "
+            f"Skipping missing values report.[/yellow]"
         )
         return
 
-    s_doc_type_path_name = sanitize_model_name_for_path(doc_type_friendly_name)
-    output_dir = REPORTS_DIR / s_doc_type_path_name / model_name
+    # Use the doc_type_key for path generation to match annotation structure
+    output_dir = REPORTS_DIR / doc_type_key / model_name
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # 1. Per-file missing values
@@ -111,7 +158,8 @@ def generate_missing_values_reports(
 
     if df_missing_per_file.empty:
         console.print(
-            "[italic]No files processed or all files were empty for per-file missing values report.[/italic]"
+            "[italic]No files processed or all files were empty for per-file "
+            "missing values report.[/italic]"
         )
     else:
         csv_path_per_file = output_dir / "missing_values_per_file.csv"
@@ -128,24 +176,37 @@ def generate_missing_values_reports(
         df_missing_summary = df_missing_per_file.mean().sort_values(ascending=False)
         if df_missing_summary.empty:
             console.print(
-                "[italic]No fields to summarize or all fields were present in all files for summary report.[/italic]"
+                "[italic]No fields to summarize or all fields were present in all "
+                "files for summary report.[/italic]"
             )
         else:
             csv_path_summary = output_dir / "missing_values_summary.csv"
-            df_missing_summary.to_frame(name="Percentage Null").to_csv(csv_path_summary, quoting=csv.QUOTE_ALL)
+            df_missing_summary.to_frame(name="Percentage Null").to_csv(
+                csv_path_summary, quoting=csv.QUOTE_ALL
+            )
             console.print(f"Saved missing values summary report to: {csv_path_summary}")
 
 
 def compare_values(gt_val: Any, pred_val: Any) -> bool:
-    """Compares two values, handling lists by sorting them first."""
+    """Compares a ground truth value with a predicted value, with special handling for lists and floats.
+
+    - For lists, elements are converted to strings and sorted before comparison to ensure
+      order-insensitivity.
+    - For floats, an absolute tolerance of 1e-9 is used for comparison. `pd.isna` is used
+      to correctly compare NaN values (NaN == NaN should be True in this context).
+    - For all other types, direct equality comparison is used.
+
+    Args:
+        gt_val: The ground truth value.
+        pred_val: The predicted value.
+
+    Returns:
+        True if the values are considered equal based on the comparison logic, False otherwise.
+    """
     if isinstance(gt_val, list) and isinstance(pred_val, list):
-        # Convert all elements to string for robust sorting if mixed types, though Pydantic should ensure consistency
         return sorted([str(x) for x in gt_val]) == sorted([str(x) for x in pred_val])
     if isinstance(gt_val, float) and isinstance(pred_val, float):
-        return (
-            pd.isna(gt_val) and pd.isna(pred_val) or abs(gt_val - pred_val) < 1e-9
-        )  # Tolerance for float comparison
-    # For other types, direct comparison
+        return pd.isna(gt_val) and pd.isna(pred_val) or abs(gt_val - pred_val) < 1e-9
     return gt_val == pred_val
 
 
@@ -156,26 +217,32 @@ def calculate_comparative_metrics(
     gt_model_name: str,
     eval_model_name: str,
     doc_type_friendly_name: str,
+    doc_type_key: str,  # Used for path generation
 ):
     """Calculates comparative metrics and saves them to a CSV file."""
     console.rule(
-        f"[bold]Comparative Metrics: '{eval_model_name}' vs (GT) '{gt_model_name}' for {doc_type_friendly_name}[/bold]",
+        f"[bold]Comparative Metrics: '{eval_model_name}' vs (GT) '{gt_model_name}' "
+        f"for {doc_type_friendly_name}[/bold]",
         style="blue",
     )
 
     if df_gt.empty and df_eval.empty:
         console.print(
-            f"[yellow]No data for BOTH ground truth ('{gt_model_name}') and evaluated model ('{eval_model_name}') for {doc_type_friendly_name}. Skipping.[/yellow]"
+            f"[yellow]No data for BOTH ground truth ('{gt_model_name}') and "
+            f"evaluated model ('{eval_model_name}') for {doc_type_friendly_name}. "
+            f"Skipping.[/yellow]"
         )
         return
     if df_gt.empty:
         console.print(
-            f"[yellow]No data for ground truth model '{gt_model_name}' for {doc_type_friendly_name}. Cannot compute comparative metrics.[/yellow]"
+            f"[yellow]No data for ground truth model '{gt_model_name}' for "
+            f"{doc_type_friendly_name}. Cannot compute comparative metrics.[/yellow]"
         )
         return
     if df_eval.empty:
         console.print(
-            f"[yellow]No data for evaluated model '{eval_model_name}' for {doc_type_friendly_name}. Cannot compute comparative metrics.[/yellow]"
+            f"[yellow]No data for evaluated model '{eval_model_name}' for "
+            f"{doc_type_friendly_name}. Cannot compute comparative metrics.[/yellow]"
         )
         return
 
@@ -242,7 +309,8 @@ def calculate_comparative_metrics(
 
     if not metrics_results:
         console.print(
-            "[yellow]No metrics calculated (perhaps no common schema keys or files after alignment).[/yellow]"
+            "[yellow]No metrics calculated (perhaps no common schema keys or files "
+            "after alignment).[/yellow]"
         )
         return
 
@@ -251,10 +319,9 @@ def calculate_comparative_metrics(
     if df_metrics.empty:
         console.print("[italic]No fields to display metrics for.[/italic]")
     else:
-        s_doc_type_path_name = sanitize_model_name_for_path(doc_type_friendly_name)
-        # gt_model_name and eval_model_name are already sanitized path components
+        # Use the doc_type_key for path generation
         output_dir = (
-            REPORTS_DIR / s_doc_type_path_name / f"{eval_model_name}_vs_{gt_model_name}"
+            REPORTS_DIR / doc_type_key / f"{eval_model_name}_vs_{gt_model_name}"
         )
         output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -334,11 +401,13 @@ def main(
 
         if not all_found_sanitized_model_names:
             log.warning(
-                "No model prediction directories found in annotations path for missing value analysis."
+                "No model prediction directories found in annotations path for "
+                "missing value analysis."
             )
         else:
             log.info(
-                f"Found models for missing value analysis: {', '.join(sorted(list(all_found_sanitized_model_names)))}"
+                f"Found models for missing value analysis: "
+                f"{', '.join(sorted(list(all_found_sanitized_model_names)))}"
             )
 
         for s_model_name_iter in sorted(list(all_found_sanitized_model_names)):
@@ -352,12 +421,14 @@ def main(
 
                 if not schema_keys:
                     log.error(
-                        f"Could not extract schema keys for {doc_type_friendly}. Skipping this document type for {s_model_name_iter}."
+                        f"Could not extract schema keys for {doc_type_friendly}. "
+                        f"Skipping this document type for {s_model_name_iter}."
                     )
                     continue
 
                 log.info(
-                    f"Processing missing values for model '{s_model_name_iter}' - '{doc_type_friendly}'..."
+                    f"Processing missing values for model '{s_model_name_iter}' - "
+                    f"'{doc_type_friendly}'..."
                 )
 
                 df_model_data = load_prediction_data(
@@ -371,6 +442,7 @@ def main(
                     df_model_data,
                     s_model_name_iter,
                     doc_type_friendly,
+                    doc_type_key,  # Pass doc_type_key
                 )
     else:
         console.print(
@@ -388,7 +460,8 @@ def main(
         s_eval_model = sanitize_model_name_for_path(test_model_name)
 
         log.info(
-            f"Comparing: Evaluated='{s_eval_model}' (from '{test_model_name}') vs GroundTruth='{s_gt_model}' (from '{ground_truth_model_name}')"
+            f"Comparing: Evaluated='{s_eval_model}' (from '{test_model_name}') vs "
+            f"GroundTruth='{s_gt_model}' (from '{ground_truth_model_name}')"
         )
 
         for doc_type_key in doc_type_keys:
@@ -401,12 +474,14 @@ def main(
 
             if not schema_keys:
                 log.error(
-                    f"Could not extract schema keys for {doc_type_friendly}. Skipping comparative metrics for this type."
+                    f"Could not extract schema keys for {doc_type_friendly}. "
+                    f"Skipping comparative metrics for this type."
                 )
                 continue
 
             log.info(
-                f"Processing comparative metrics for document type '{doc_type_friendly}'..."
+                f"Processing comparative metrics for document type "
+                f"'{doc_type_friendly}'..."
             )
 
             df_gt = load_prediction_data(
@@ -417,7 +492,13 @@ def main(
             )
 
             calculate_comparative_metrics(
-                df_gt, df_eval, schema_keys, s_gt_model, s_eval_model, doc_type_friendly
+                df_gt,
+                df_eval,
+                schema_keys,
+                s_gt_model,
+                s_eval_model,
+                doc_type_friendly,
+                doc_type_key,  # Pass doc_type_key
             )
     else:
         console.print(

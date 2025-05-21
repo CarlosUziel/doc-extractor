@@ -1,17 +1,14 @@
 import json
 import tempfile
-from datetime import date  # Import date
+from datetime import date
 from pathlib import Path
-from typing import Any, Literal, cast  # Added Dict, Any
+from typing import Any, Dict, Literal, Optional, cast
 
-import fitz  # PyMuPDF
+import fitz
 import streamlit as st  # type: ignore
 from PIL import Image
 
-from config.logger import log  # Import the logger
-
-# Assuming run_extraction_pipeline is in src.pipelines.doc_extraction
-# Adjust the import path if your project structure is different
+from config.logger import log
 from pipelines.doc_extraction import run_extraction_pipeline
 
 st.title("Document Extractor")
@@ -36,14 +33,32 @@ selected_document_type_display = st.selectbox(
     placeholder="Choose an option",
 )
 
+
+def _get_key_from_display_name(
+    display_name: Optional[str], options: Dict[str, str]
+) -> Optional[str]:
+    """Gets the key from a display name in a dictionary of options.
+
+    Args:
+        display_name: The display name to search for.
+        options: A dictionary where keys are internal values and values are display names.
+
+    Returns:
+        The key corresponding to the display name, or None if not found.
+    """
+    if display_name is None:
+        return None
+    for key, value in options.items():
+        if value == display_name:
+            return key
+    return None
+
+
 # Map display name back to actual value
-selected_document_type_key: Literal["epc_certificate", "property_expose"] | None = None
-for key, value in document_type_options.items():
-    if value == selected_document_type_display:
-        selected_document_type_key = cast(
-            Literal["epc_certificate", "property_expose"], key
-        )
-        break
+selected_document_type_key = cast(
+    Optional[Literal["epc_certificate", "property_expose"]],
+    _get_key_from_display_name(selected_document_type_display, document_type_options),
+)
 
 # LLM Provider and Model Selection
 llm_provider_options = {
@@ -65,15 +80,14 @@ llm_model_options = {
 selected_llm_provider_display = st.selectbox(
     "Select LLM Provider",
     options=list(llm_provider_options.values()),
-    index=default_llm_provider_index,  # Set default provider here
+    index=default_llm_provider_index,
     placeholder="Choose a provider",
 )
 
-selected_llm_provider_key: Literal["openai", "gemini"] | None = None
-for key, value in llm_provider_options.items():
-    if value == selected_llm_provider_display:
-        selected_llm_provider_key = cast(Literal["openai", "gemini"], key)
-        break
+selected_llm_provider_key = cast(
+    Optional[Literal["openai", "gemini"]],
+    _get_key_from_display_name(selected_llm_provider_display, llm_provider_options),
+)
 
 available_models: list[str] = []
 if selected_llm_provider_key:
@@ -82,13 +96,12 @@ if selected_llm_provider_key:
 # Determine the default model index if the provider is OpenAI
 default_llm_model_index = None
 if selected_llm_provider_key == "openai" and available_models:
-    # Assuming the first model in the list is the default
     default_llm_model_index = 0
 
 selected_llm_model = st.selectbox(
     "Select LLM Model",
     options=available_models,
-    index=default_llm_model_index,  # Set default model here
+    index=default_llm_model_index,
     placeholder="Choose a model"
     if selected_llm_provider_key
     else "Select a provider first",
@@ -106,9 +119,16 @@ if "processed_pil_images" not in st.session_state:
 
 def display_ocr_previews(
     data: Any, pil_images: list[Image.Image], current_path: str = ""
-):
-    """
-    Recursively traverses the data and displays OCR previews for fields with bounding boxes.
+) -> None:
+    """Recursively traverses the data and displays OCR previews for fields with bounding boxes.
+
+    Args:
+        data: The data structure (likely a nested dictionary) containing extracted information
+              and bounding box details.
+        pil_images: A list of PIL.Image.Image objects representing the pages of the
+                    processed document.
+        current_path: The current path in the nested data structure, used for
+                      generating descriptive field names.
     """
     if not pil_images:
         st.warning("No processed images available for OCR preview.")
@@ -117,7 +137,7 @@ def display_ocr_previews(
     if isinstance(data, dict):
         for key, value in data.items():
             if key.endswith("_bbox") and value is not None:
-                actual_field_key = key[:-5]  # Remove "_bbox"
+                actual_field_key = key[:-5]
                 if actual_field_key in data:
                     field_value = data[actual_field_key]
                     bbox_coords = value
@@ -128,7 +148,7 @@ def display_ocr_previews(
                         else actual_field_key
                     )
 
-                    st.markdown("---")  # Separator for each field
+                    st.markdown("---")
 
                     # Determine the image to crop from based on page_number
                     image_to_crop = None
@@ -144,12 +164,12 @@ def display_ocr_previews(
                             page_number_info = f" (Page {page_idx + 1})"
                         else:
                             st.caption(
-                                f"Page index {page_idx} out of range for field {full_field_path}."
+                                f"Page index {page_idx} out of range for field "
+                                f"{full_field_path}."
                             )
-                            image_to_crop = pil_images[0]  # Fallback to first page
+                            image_to_crop = pil_images[0]
                             page_number_info = " (Page 1 - Fallback)"
                     else:
-                        # Fallback to first page if page_number is not available
                         image_to_crop = pil_images[0]
                         page_number_info = " (Page 1 - Fallback)"
 
@@ -166,13 +186,15 @@ def display_ocr_previews(
                             k in bbox_coords for k in ["xmin", "ymin", "xmax", "ymax"]
                         ):
                             st.markdown(
-                                f"**BBox (xmin,ymin,xmax,ymax):**\n`({bbox_coords['xmin']},{bbox_coords['ymin']},{bbox_coords['xmax']},{bbox_coords['ymax']})`"
+                                f"**BBox (xmin,ymin,xmax,ymax):**\n"
+                                f"`({bbox_coords['xmin']},{bbox_coords['ymin']},"
+                                f"{bbox_coords['xmax']},{bbox_coords['ymax']})`"
                             )
                             if image_to_crop:
                                 try:
                                     img_width, img_height = image_to_crop.size
                                     # Scale normalized coordinates (0-1000) to absolute pixel values
-                                    padding = 10  # Define padding amount
+                                    padding = 10
                                     xmin_abs = max(
                                         0,
                                         int((bbox_coords["xmin"] / 1000) * img_width)
@@ -194,7 +216,6 @@ def display_ocr_previews(
                                         + padding,
                                     )
 
-                                    # Ensure coordinates are integers for cropping
                                     int_bbox = (
                                         xmin_abs,
                                         ymin_abs,
@@ -204,9 +225,7 @@ def display_ocr_previews(
                                     cropped_image = image_to_crop.crop(int_bbox)  # type: ignore
                                     with col4:
                                         st.markdown("**Preview:**")
-                                        st.image(
-                                            cropped_image, width=150
-                                        )  # Adjusted width
+                                        st.image(cropped_image, width=150)
                                 except Exception as crop_e:
                                     with col4:
                                         st.caption(f"Crop error: {crop_e}")
@@ -215,7 +234,6 @@ def display_ocr_previews(
                                     st.caption("Image for preview not available.")
                         else:
                             st.markdown("**BBox:**\nInvalid format")
-                # else: field corresponding to bbox not found, skip
             elif isinstance(value, dict):
                 new_path = f"{current_path}{key}." if current_path else f"{key}."
                 display_ocr_previews(value, pil_images, new_path)
@@ -230,6 +248,23 @@ def display_ocr_previews(
                         display_ocr_previews(item, pil_images, new_path)
 
 
+def date_converter(o: Any) -> str:
+    """Converts date objects to ISO format strings for JSON serialization.
+
+    Args:
+        o: The object to convert.
+
+    Returns:
+        The ISO format string if the object is a date, otherwise raises TypeError.
+
+    Raises:
+        TypeError: If the object is not a date object and cannot be serialized.
+    """
+    if isinstance(o, date):
+        return o.isoformat()
+    raise TypeError(f"Object of type {o.__class__.__name__} is not JSON serializable")
+
+
 if submit_button:
     if uploaded_file is None:
         st.error("Please upload a PDF file.")
@@ -240,8 +275,8 @@ if submit_button:
     elif selected_llm_model is None:
         st.error("Please select an LLM model.")
     else:
-        tmp_file_path: Path | None = None  # Initialize tmp_file_path
-        st.session_state.processed_pil_images = []  # Clear previous images
+        tmp_file_path: Path | None = None
+        st.session_state.processed_pil_images = []
         with st.spinner("Processing document..."):
             try:
                 # Save uploaded file to a temporary location
@@ -257,9 +292,6 @@ if submit_button:
                         pdf_doc = fitz.open(tmp_file_path)
                         for page_num in range(len(pdf_doc)):
                             page = pdf_doc.load_page(page_num)
-                            # Increase resolution if needed by adjusting the matrix
-                            # matrix = fitz.Matrix(2, 2) # Example: 2x zoom
-                            # pix = page.get_pixmap(matrix=matrix)
                             pix = page.get_pixmap()  # type: ignore
                             img = Image.frombytes(
                                 "RGB", (pix.width, pix.height), pix.samples
@@ -267,31 +299,25 @@ if submit_button:
                             st.session_state.processed_pil_images.append(img)
                         pdf_doc.close()
                         log.info(
-                            f"Successfully converted {len(st.session_state.processed_pil_images)} page(s) to PIL Images for preview."
+                            f"Successfully converted "
+                            f"{len(st.session_state.processed_pil_images)} "
+                            f"page(s) to PIL Images for preview."
                         )
                     except Exception as img_e:
                         st.error(f"Error processing PDF for image preview: {img_e}")
                         log.error(f"Error converting PDF to PIL Images: {img_e}")
-                        st.session_state.processed_pil_images = []  # Ensure it's empty on error
+                        st.session_state.processed_pil_images = []
 
                 # Call the document extraction pipeline
                 result = run_extraction_pipeline(
                     file_path=tmp_file_path,
                     document_type=selected_document_type_key,
-                    llm_provider=selected_llm_provider_key,  # Correctly typed
+                    llm_provider=selected_llm_provider_key,
                     llm_model=selected_llm_model,
                 )
 
                 if result:
                     # Convert Pydantic model to dict, then to JSON string for display
-                    # Custom JSON encoder to handle date objects
-                    def date_converter(o):
-                        if isinstance(o, date):
-                            return o.isoformat()
-                        raise TypeError(
-                            f"Object of type {o.__class__.__name__} is not JSON serializable"
-                        )
-
                     st.session_state.extraction_result = json.dumps(
                         result.model_dump(), indent=2, default=date_converter
                     )
@@ -302,16 +328,19 @@ if submit_button:
                     )
                     st.error("Extraction failed or returned no data.")
                     log.warning(
-                        f"Extraction failed or returned no data for file: {uploaded_file.name} and document type: {selected_document_type_key}"
+                        f"Extraction failed or returned no data for file: "
+                        f"{uploaded_file.name} and document type: "
+                        f"{selected_document_type_key}"
                     )
 
             except Exception as e:
                 st.session_state.extraction_result = f"An error occurred: {str(e)}"
                 st.error(f"An error occurred during extraction: {str(e)}")
                 log.error(
-                    f"An error occurred during extraction for file: {uploaded_file.name if uploaded_file else 'N/A'}: {str(e)}",
+                    f"An error occurred during extraction for file: "
+                    f"{uploaded_file.name if uploaded_file else 'N/A'}: {str(e)}",
                     exc_info=True,
-                )  # Log the exception with stack trace
+                )
             finally:
                 if tmp_file_path and tmp_file_path.exists():
                     try:
@@ -348,9 +377,7 @@ if st.session_state.extraction_result:
         except Exception as e_preview:
             st.error(f"An error occurred while generating OCR previews: {e_preview}")
             log.error(f"OCR Preview error: {e_preview}")
-    elif (
-        submit_button
-    ):  # If submit was pressed but no images (e.g. PDF processing error)
+    elif submit_button:
         st.warning(
             "OCR Previews cannot be shown as document images could not be processed."
         )

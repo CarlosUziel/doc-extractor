@@ -28,7 +28,17 @@ class LlmProviderChoice(str, enum.Enum):
 
 
 def sanitize_model_name(model_name: str) -> str:
-    """Sanitizes the model name to be used as a directory name."""
+    """Sanitizes a model name to be filesystem-friendly.
+
+    Replaces characters like '/' and ':' with underscores to ensure compatibility
+    with most filesystems when using the model name in paths.
+
+    Args:
+        model_name: The original model name string.
+
+    Returns:
+        A sanitized string suitable for use in file or directory names.
+    """
     return model_name.replace("/", "_").replace(":", "_")
 
 

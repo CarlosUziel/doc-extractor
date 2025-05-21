@@ -12,6 +12,7 @@ from langchain_openai import ChatOpenAI
 from PIL import Image
 from pydantic import BaseModel, SecretStr
 
+from config.logger import log
 from config.prompts import EXTRACT_INFO_PROMPT
 from config.schema import EPCCertificateDetails, PropertyExposeDetails
 from config.settings import settings
@@ -40,7 +41,7 @@ def load_pdf_images(
         or no valid images could be generated.
 
     Raises:
-        No exceptions are raised directly; errors are caught and logged with print().
+        No exceptions are raised directly; errors are caught and logged with log.error().
     """
     if page_numbers is None:
         try:
@@ -49,7 +50,7 @@ def load_pdf_images(
             pdf_document.close()
             page_numbers = list(range(1, num_pages + 1))
         except Exception as e:
-            print(f"Error opening PDF to get page count: {e}")
+            log.error(f"Error opening PDF to get page count: {e}")
             return None
     elif isinstance(page_numbers, int):
         page_numbers = [page_numbers]
@@ -63,13 +64,13 @@ def load_pdf_images(
                 if img_data:
                     base64_images.append(img_data)
             else:
-                print(
+                log.warning(
                     f"Warning: Page number {page_num} is out of range for {file_path}"
                 )
         pdf_document.close()
         return base64_images if base64_images else None
     except Exception as e:
-        print(f"Error processing PDF as images: {e}")
+        log.error(f"Error processing PDF as images: {e}")
         return None
 
 
@@ -89,14 +90,15 @@ def pdf_page_to_base64(
         A base64-encoded PNG image as a string, or None if conversion failed.
 
     Raises:
-        No exceptions are raised directly; errors are caught and logged with print().
+        No exceptions are raised directly; errors are caught and logged with log.error().
     """
     try:
         page = pdf_document.load_page(page_number - 1)
         pix = page.get_pixmap()  # type: ignore
         if not isinstance(pix.samples, bytes):
-            print(
-                f"Error: pix.samples is not bytes for page {page_number} in {pdf_document.name}. Type: {type(pix.samples)}"
+            log.error(
+                f"Error: pix.samples is not bytes for page {page_number} "
+                f"in {pdf_document.name}. Type: {type(pix.samples)}"
             )
             return None
         img = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
@@ -104,13 +106,14 @@ def pdf_page_to_base64(
         img.save(buffer, format="PNG")
         img_bytes = buffer.getvalue()
         if not isinstance(img_bytes, bytes):
-            print(
-                f"Error: buffer.getvalue() did not return bytes for page {page_number} in {pdf_document.name}. Type: {type(img_bytes)}"
+            log.error(
+                f"Error: buffer.getvalue() did not return bytes for page {page_number} "
+                f"in {pdf_document.name}. Type: {type(img_bytes)}"
             )
             return None
         return base64.b64encode(img_bytes).decode("utf-8")
     except Exception as e:
-        print(f"Error converting page {page_number} to base64: {e}")
+        log.error(f"Error converting page {page_number} to base64: {e}")
         return None
 
 
@@ -136,14 +139,14 @@ def get_llm(provider: Literal["openai", "gemini"], model_name: str) -> BaseChatM
                    or if the model initialization fails for any reason.
     """
     if provider == "openai":
-        if not settings.OPENAI_API_KEY:
+        if not settings.openai_api_key:
             raise ValueError(
                 "OpenAI API key not configured in settings. "
                 "Please set OPENAI_API_KEY in your .env file."
             )
         try:
             return ChatOpenAI(
-                api_key=SecretStr(settings.OPENAI_API_KEY), model=model_name
+                api_key=SecretStr(settings.openai_api_key), model=model_name
             )
         except Exception as e:
             raise ValueError(
@@ -152,14 +155,14 @@ def get_llm(provider: Literal["openai", "gemini"], model_name: str) -> BaseChatM
                 f"your API key. Error: {e}"
             )
     elif provider == "gemini":
-        if not settings.GEMINI_API_KEY:
+        if not settings.gemini_api_key:
             raise ValueError(
                 "Gemini API key not configured in settings. "
                 "Please set GEMINI_API_KEY in your .env file."
             )
         try:
             return ChatGoogleGenerativeAI(
-                model=model_name, google_api_key=SecretStr(settings.GEMINI_API_KEY)
+                model=model_name, google_api_key=SecretStr(settings.gemini_api_key)
             )
         except Exception as e:
             raise ValueError(

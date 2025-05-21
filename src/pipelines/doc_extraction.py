@@ -41,7 +41,7 @@ def run_extraction_pipeline(
     """
     base64_images = load_pdf_images(file_path, page_numbers=page_numbers)
     if not base64_images:
-        print(f"Could not load images from {file_path}")
+        # Removed print statement, load_pdf_images already logs this error
         log.error(f"Could not load images from {file_path}")
         return None
 
@@ -51,7 +51,7 @@ def run_extraction_pipeline(
     try:
         llm = get_llm(provider=llm_provider, model_name=llm_model)
     except ValueError as e:
-        print(f"Error initializing LLM: {e}")
+        # Removed print statement, get_llm should ideally log or raise appropriately
         log.error(f"Error initializing LLM: {e}")
         return None
 
