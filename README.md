@@ -107,14 +107,11 @@ Before you begin, ensure you have the following installed:
 ### Usage
 
 1.  **Set up Environment Variables**:
-    Copy the example environment file `.env.example` (if one exists, otherwise create `.env`) to `.env`.
+    Copy the example environment file `.env.dist` to `.env`.
     ```bash
-    # If .env.example exists:
-    # cp .env.example .env
-    # Otherwise, create .env and add your API keys:
-    # echo "OPENAI_API_KEY='your_openai_api_key'" > .env
-    # echo "GEMINI_API_KEY='your_gemini_api_key'" >> .env
+    cp .env.dist .env
     ```
+    
     Modify `.env` with your API keys for OpenAI and/or Google Gemini:
     ```env
     OPENAI_API_KEY="sk-your_openai_api_key_here"
@@ -392,6 +389,12 @@ To further enhance the `doc-extractor`'s accuracy, efficiency, and maintainabili
         *   Allowing the agent to interact with the document and the LLM in a more dynamic way, potentially leading to better results.
 
 By focusing on these areas, `doc-extractor` can become a more robust, transparent, and cost-effective solution.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
