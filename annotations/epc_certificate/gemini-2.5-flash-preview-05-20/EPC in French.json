@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "22",
+    "street_number_bbox": {
+      "ymin": 171,
+      "xmin": 304,
+      "ymax": 183,
+      "xmax": 321,
+      "page_number": 0
+    },
+    "street_name": "Avenue Fond du Diable",
+    "street_name_bbox": {
+      "ymin": 171,
+      "xmin": 96,
+      "ymax": 183,
+      "xmax": 283,
+      "page_number": 0
+    },
+    "zip_code": "1310",
+    "zip_code_bbox": {
+      "ymin": 203,
+      "xmin": 89,
+      "ymax": 215,
+      "xmax": 124,
+      "page_number": 0
+    },
+    "city": "La Hulpe",
+    "city_bbox": {
+      "ymin": 203,
+      "xmin": 229,
+      "ymax": 215,
+      "xmax": 308,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 210,
+  "epc_before_renovations_bbox": {
+    "ymin": 441,
+    "xmin": 416,
+    "ymax": 453,
+    "xmax": 445,
+    "page_number": 0
+  },
+  "living_area_sqm": 195.0,
+  "living_area_sqm_bbox": {
+    "ymin": 405,
+    "xmin": 433,
+    "ymax": 416,
+    "xmax": 482,
+    "page_number": 0
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 235,
+    "xmin": 249,
+    "ymax": 247,
+    "xmax": 366,
+    "page_number": 0
+  },
+  "year_of_built": 1995,
+  "year_of_built_bbox": {
+    "ymin": 268,
+    "xmin": 229,
+    "ymax": 279,
+    "xmax": 266,
+    "page_number": 0
+  },
+  "epc_date": "2024-04-16",
+  "epc_date_bbox": {
+    "ymin": 62,
+    "xmin": 751,
+    "ymax": 73,
+    "xmax": 829,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2034-04-16",
+  "epc_date_valid_until_bbox": {
+    "ymin": 77,
+    "xmin": 751,
+    "ymax": 88,
+    "xmax": 829,
+    "page_number": 0
+  }
+}

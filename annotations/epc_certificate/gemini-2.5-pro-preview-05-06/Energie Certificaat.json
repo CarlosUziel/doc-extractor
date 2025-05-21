@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "13 bus 304",
+    "street_number_bbox": {
+      "ymin": 147,
+      "xmin": 194,
+      "ymax": 155,
+      "xmax": 335,
+      "page_number": 0
+    },
+    "street_name": "Terninckstraat",
+    "street_name_bbox": {
+      "ymin": 136,
+      "xmin": 193,
+      "ymax": 145,
+      "xmax": 293,
+      "page_number": 0
+    },
+    "zip_code": "2000",
+    "zip_code_bbox": {
+      "ymin": 157,
+      "xmin": 193,
+      "ymax": 165,
+      "xmax": 227,
+      "page_number": 0
+    },
+    "city": "Antwerpen",
+    "city_bbox": {
+      "ymin": 157,
+      "xmin": 305,
+      "ymax": 166,
+      "xmax": 370,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 169,
+  "epc_before_renovations_bbox": {
+    "ymin": 272,
+    "xmin": 190,
+    "ymax": 330,
+    "xmax": 369,
+    "page_number": 0
+  },
+  "living_area_sqm": 65.0,
+  "living_area_sqm_bbox": {
+    "ymin": 232,
+    "xmin": 353,
+    "ymax": 240,
+    "xmax": 374,
+    "page_number": 2
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 196,
+    "xmin": 193,
+    "ymax": 205,
+    "xmax": 275,
+    "page_number": 0
+  },
+  "year_of_built": 1969,
+  "year_of_built_bbox": {
+    "ymin": 216,
+    "xmin": 193,
+    "ymax": 225,
+    "xmax": 225,
+    "page_number": 0
+  },
+  "epc_date": "2013-04-16",
+  "epc_date_bbox": {
+    "ymin": 594,
+    "xmin": 149,
+    "ymax": 603,
+    "xmax": 223,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2023-04-16",
+  "epc_date_valid_until_bbox": {
+    "ymin": 712,
+    "xmin": 733,
+    "ymax": 722,
+    "xmax": 827,
+    "page_number": 0
+  }
+}

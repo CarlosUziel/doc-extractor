@@ -1,0 +1,78 @@
+{
+  "realty_address": {
+    "street_number": "0a",
+    "street_number_bbox": {
+      "ymin": 373,
+      "xmin": 79,
+      "ymax": 393,
+      "xmax": 196,
+      "page_number": 0
+    },
+    "street_name": "Weigtrieb",
+    "street_name_bbox": {
+      "ymin": 373,
+      "xmin": 213,
+      "ymax": 393,
+      "xmax": 386,
+      "page_number": 0
+    },
+    "zip_code": "6815",
+    "zip_code_bbox": {
+      "ymin": 405,
+      "xmin": 70,
+      "ymax": 418,
+      "xmax": 124,
+      "page_number": 0
+    },
+    "city": "Ansfelden",
+    "city_bbox": {
+      "ymin": 405,
+      "xmin": 134,
+      "ymax": 418,
+      "xmax": 268,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 309,
+  "epc_before_renovations_bbox": {
+    "ymin": 655,
+    "xmin": 139,
+    "ymax": 695,
+    "xmax": 234,
+    "page_number": 0
+  },
+  "living_area_sqm": null,
+  "living_area_sqm_bbox": null,
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 319,
+    "xmin": 225,
+    "ymax": 340,
+    "xmax": 268,
+    "page_number": 0
+  },
+  "year_of_built": 1955,
+  "year_of_built_bbox": {
+    "ymin": 259,
+    "xmin": 307,
+    "ymax": 280,
+    "xmax": 353,
+    "page_number": 0
+  },
+  "epc_date": "2010-02-17",
+  "epc_date_bbox": {
+    "ymin": 776,
+    "xmin": 524,
+    "ymax": 787,
+    "xmax": 620,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2020-02-16",
+  "epc_date_valid_until_bbox": {
+    "ymin": 789,
+    "xmin": 524,
+    "ymax": 800,
+    "xmax": 620,
+    "page_number": 0
+  }
+}

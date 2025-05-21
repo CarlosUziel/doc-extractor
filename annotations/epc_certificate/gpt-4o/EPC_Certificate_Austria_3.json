@@ -1,0 +1,78 @@
+{
+  "realty_address": {
+    "street_number": "7",
+    "street_number_bbox": {
+      "ymin": 160,
+      "xmin": 150,
+      "ymax": 180,
+      "xmax": 200,
+      "page_number": 0
+    },
+    "street_name": "Lugerplatz",
+    "street_name_bbox": {
+      "ymin": 160,
+      "xmin": 100,
+      "ymax": 180,
+      "xmax": 150,
+      "page_number": 0
+    },
+    "zip_code": "2750",
+    "zip_code_bbox": {
+      "ymin": 180,
+      "xmin": 100,
+      "ymax": 200,
+      "xmax": 150,
+      "page_number": 0
+    },
+    "city": "Pöchlarn",
+    "city_bbox": {
+      "ymin": 180,
+      "xmin": 150,
+      "ymax": 200,
+      "xmax": 220,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 55,
+  "epc_before_renovations_bbox": {
+    "ymin": 410,
+    "xmin": 480,
+    "ymax": 430,
+    "xmax": 530,
+    "page_number": 0
+  },
+  "living_area_sqm": null,
+  "living_area_sqm_bbox": null,
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 120,
+    "xmin": 100,
+    "ymax": 140,
+    "xmax": 200,
+    "page_number": 0
+  },
+  "year_of_built": 1996,
+  "year_of_built_bbox": {
+    "ymin": 160,
+    "xmin": 600,
+    "ymax": 180,
+    "xmax": 650,
+    "page_number": 0
+  },
+  "epc_date": "2009-09-16",
+  "epc_date_bbox": {
+    "ymin": 580,
+    "xmin": 600,
+    "ymax": 600,
+    "xmax": 650,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2019-09-16",
+  "epc_date_valid_until_bbox": {
+    "ymin": 580,
+    "xmin": 750,
+    "ymax": 600,
+    "xmax": 800,
+    "page_number": 0
+  }
+}

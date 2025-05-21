@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "61",
+    "street_number_bbox": {
+      "ymin": 280,
+      "xmin": 95,
+      "ymax": 300,
+      "xmax": 130,
+      "page_number": 0
+    },
+    "street_name": "Lecomteweg",
+    "street_name_bbox": {
+      "ymin": 280,
+      "xmin": 10,
+      "ymax": 300,
+      "xmax": 90,
+      "page_number": 0
+    },
+    "zip_code": "9991",
+    "zip_code_bbox": {
+      "ymin": 300,
+      "xmin": 10,
+      "ymax": 320,
+      "xmax": 60,
+      "page_number": 0
+    },
+    "city": "Couvin",
+    "city_bbox": {
+      "ymin": 300,
+      "xmin": 100,
+      "ymax": 320,
+      "xmax": 170,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 228,
+  "epc_before_renovations_bbox": {
+    "ymin": 445,
+    "xmin": 10,
+    "ymax": 470,
+    "xmax": 50,
+    "page_number": 0
+  },
+  "living_area_sqm": 132.0,
+  "living_area_sqm_bbox": {
+    "ymin": 575,
+    "xmin": 40,
+    "ymax": 595,
+    "xmax": 80,
+    "page_number": 5
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 425,
+    "xmin": 10,
+    "ymax": 445,
+    "xmax": 80,
+    "page_number": 0
+  },
+  "year_of_built": 1999,
+  "year_of_built_bbox": {
+    "ymin": 210,
+    "xmin": 290,
+    "ymax": 230,
+    "xmax": 340,
+    "page_number": 6
+  },
+  "epc_date": "2015-10-26",
+  "epc_date_bbox": {
+    "ymin": 760,
+    "xmin": 10,
+    "ymax": 775,
+    "xmax": 80,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2026-10-16",
+  "epc_date_valid_until_bbox": {
+    "ymin": 870,
+    "xmin": 10,
+    "ymax": 890,
+    "xmax": 140,
+    "page_number": 0
+  }
+}

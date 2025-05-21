@@ -1,0 +1,65 @@
+{
+  "realty_address": {
+    "street_number": null,
+    "street_number_bbox": null,
+    "street_name": "Schlingen",
+    "street_name_bbox": {
+      "ymin": 340,
+      "xmin": 244,
+      "ymax": 365,
+      "xmax": 419,
+      "page_number": 1
+    },
+    "zip_code": null,
+    "zip_code_bbox": null,
+    "city": "Schlingen",
+    "city_bbox": null
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 200.0,
+  "living_area_sqm_bbox": {
+    "ymin": 270,
+    "xmin": 244,
+    "ymax": 290,
+    "xmax": 294,
+    "page_number": 1
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 200,
+    "xmin": 244,
+    "ymax": 225,
+    "xmax": 399,
+    "page_number": 1
+  },
+  "year_of_built": 1997,
+  "year_of_built_bbox": {
+    "ymin": 270,
+    "xmin": 670,
+    "ymax": 290,
+    "xmax": 690,
+    "page_number": 1
+  },
+  "realty_features": [
+    "lift",
+    "balcony"
+  ],
+  "realty_features_bbox": null,
+  "surface": 500.0,
+  "surface_bbox": {
+    "ymin": 200,
+    "xmin": 670,
+    "ymax": 220,
+    "xmax": 720,
+    "page_number": 1
+  },
+  "price": 400000.0,
+  "price_bbox": {
+    "ymin": 235,
+    "xmin": 670,
+    "ymax": 255,
+    "xmax": 720,
+    "page_number": 1
+  }
+}

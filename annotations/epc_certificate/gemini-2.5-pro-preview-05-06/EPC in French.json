@@ -1,0 +1,15 @@
+{
+  "realty_address": null,
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": null,
+  "living_area_sqm_bbox": null,
+  "realty_type": null,
+  "realty_type_bbox": null,
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "epc_date": null,
+  "epc_date_bbox": null,
+  "epc_date_valid_until": null,
+  "epc_date_valid_until_bbox": null
+}

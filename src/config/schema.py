@@ -111,7 +111,7 @@ class PropertyExposeDetails(BasePropertyDocumentDetails):
         ]
     ] = Field(
         default=None,
-        description="List of features the property has. Select the one that fits best, translate to English if necessary.",
+        description="List of features the property has. Select any that apply, translate to English if necessary.",
     )
     realty_features_bbox: Optional[BoundingBox] = Field(
         default=None,
@@ -120,7 +120,7 @@ class PropertyExposeDetails(BasePropertyDocumentDetails):
 
     surface: Optional[float] = Field(
         default=None, description="Surface of the plot area in square meters."
-    )  # Plot area
+    )
     surface_bbox: Optional[BoundingBox] = Field(
         default=None,
         description="Bounding box for plot area surface, including page number.",

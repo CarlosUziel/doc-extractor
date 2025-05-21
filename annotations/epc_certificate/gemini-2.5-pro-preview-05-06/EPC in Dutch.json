@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "1",
+    "street_number_bbox": {
+      "ymin": 426,
+      "xmin": 480,
+      "ymax": 439,
+      "xmax": 489,
+      "page_number": 0
+    },
+    "street_name": "Ogentroostlaan",
+    "street_name_bbox": {
+      "ymin": 426,
+      "xmin": 358,
+      "ymax": 439,
+      "xmax": 476,
+      "page_number": 0
+    },
+    "zip_code": "3090",
+    "zip_code_bbox": {
+      "ymin": 426,
+      "xmin": 499,
+      "ymax": 439,
+      "xmax": 536,
+      "page_number": 0
+    },
+    "city": "Overijse",
+    "city_bbox": {
+      "ymin": 426,
+      "xmin": 542,
+      "ymax": 439,
+      "xmax": 606,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 198,
+  "epc_before_renovations_bbox": {
+    "ymin": 532,
+    "xmin": 540,
+    "ymax": 554,
+    "xmax": 577,
+    "page_number": 0
+  },
+  "living_area_sqm": 243.0,
+  "living_area_sqm_bbox": {
+    "ymin": 445,
+    "xmin": 597,
+    "ymax": 458,
+    "xmax": 626,
+    "page_number": 0
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 445,
+    "xmin": 332,
+    "ymax": 458,
+    "xmax": 381,
+    "page_number": 0
+  },
+  "year_of_built": 1972,
+  "year_of_built_bbox": {
+    "ymin": 648,
+    "xmin": 513,
+    "ymax": 660,
+    "xmax": 546,
+    "page_number": 6
+  },
+  "epc_date": "2024-01-12",
+  "epc_date_bbox": {
+    "ymin": 819,
+    "xmin": 140,
+    "ymax": 830,
+    "xmax": 213,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2034-01-12",
+  "epc_date_valid_until_bbox": {
+    "ymin": 912,
+    "xmin": 757,
+    "ymax": 925,
+    "xmax": 852,
+    "page_number": 0
+  }
+}

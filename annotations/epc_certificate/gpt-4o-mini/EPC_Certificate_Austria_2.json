@@ -1,0 +1,72 @@
+{
+  "realty_address": {
+    "street_number": "0a",
+    "street_number_bbox": null,
+    "street_name": "Weighting",
+    "street_name_bbox": {
+      "ymin": 18,
+      "xmin": 35,
+      "ymax": 34,
+      "xmax": 182,
+      "page_number": 0
+    },
+    "zip_code": "6815",
+    "zip_code_bbox": {
+      "ymin": 18,
+      "xmin": 250,
+      "ymax": 34,
+      "xmax": 270,
+      "page_number": 0
+    },
+    "city": "Ansfelden",
+    "city_bbox": {
+      "ymin": 18,
+      "xmin": 205,
+      "ymax": 34,
+      "xmax": 230,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 309,
+  "epc_before_renovations_bbox": {
+    "ymin": 240,
+    "xmin": 650,
+    "ymax": 260,
+    "xmax": 800,
+    "page_number": 0
+  },
+  "living_area_sqm": 196.3,
+  "living_area_sqm_bbox": {
+    "ymin": 100,
+    "xmin": 35,
+    "ymax": 120,
+    "xmax": 82,
+    "page_number": 1
+  },
+  "realty_type": "house",
+  "realty_type_bbox": null,
+  "year_of_built": 1955,
+  "year_of_built_bbox": {
+    "ymin": 240,
+    "xmin": 109,
+    "ymax": 260,
+    "xmax": 135,
+    "page_number": 0
+  },
+  "epc_date": "2010-02-17",
+  "epc_date_bbox": {
+    "ymin": 240,
+    "xmin": 600,
+    "ymax": 260,
+    "xmax": 685,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2020-02-16",
+  "epc_date_valid_until_bbox": {
+    "ymin": 240,
+    "xmin": 700,
+    "ymax": 260,
+    "xmax": 785,
+    "page_number": 0
+  }
+}

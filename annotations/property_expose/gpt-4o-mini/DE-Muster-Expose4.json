@@ -1,0 +1,83 @@
+{
+  "realty_address": {
+    "street_number": "60",
+    "street_number_bbox": {
+      "ymin": 0,
+      "xmin": 0,
+      "ymax": 0,
+      "xmax": 0,
+      "page_number": null
+    },
+    "street_name": "Vogt-Groth-Weg",
+    "street_name_bbox": {
+      "ymin": 0,
+      "xmin": 0,
+      "ymax": 0,
+      "xmax": 0,
+      "page_number": null
+    },
+    "zip_code": "22609",
+    "zip_code_bbox": {
+      "ymin": 0,
+      "xmin": 0,
+      "ymax": 0,
+      "xmax": 0,
+      "page_number": null
+    },
+    "city": "Hamburg",
+    "city_bbox": {
+      "ymin": 0,
+      "xmin": 0,
+      "ymax": 0,
+      "xmax": 0,
+      "page_number": null
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 89.0,
+  "living_area_sqm_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 0,
+    "xmax": 0,
+    "page_number": null
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 0,
+    "xmax": 0,
+    "page_number": null
+  },
+  "year_of_built": 1971,
+  "year_of_built_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 0,
+    "xmax": 0,
+    "page_number": null
+  },
+  "realty_features": [
+    "lift",
+    "basement"
+  ],
+  "realty_features_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 0,
+    "xmax": 0,
+    "page_number": null
+  },
+  "surface": null,
+  "surface_bbox": null,
+  "price": 332000.0,
+  "price_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 0,
+    "xmax": 0,
+    "page_number": null
+  }
+}

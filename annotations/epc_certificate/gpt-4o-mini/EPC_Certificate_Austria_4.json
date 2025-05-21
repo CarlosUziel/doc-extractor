@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "3",
+    "street_number_bbox": {
+      "ymin": 234,
+      "xmin": 224,
+      "ymax": 254,
+      "xmax": 248,
+      "page_number": 0
+    },
+    "street_name": "Jandring",
+    "street_name_bbox": {
+      "ymin": 234,
+      "xmin": 190,
+      "ymax": 254,
+      "xmax": 224,
+      "page_number": 0
+    },
+    "zip_code": "1784",
+    "zip_code_bbox": {
+      "ymin": 234,
+      "xmin": 254,
+      "ymax": 254,
+      "xmax": 268,
+      "page_number": 0
+    },
+    "city": "Schwechat",
+    "city_bbox": {
+      "ymin": 234,
+      "xmin": 268,
+      "ymax": 254,
+      "xmax": 288,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 121,
+  "epc_before_renovations_bbox": {
+    "ymin": 408,
+    "xmin": 558,
+    "ymax": 429,
+    "xmax": 597,
+    "page_number": 0
+  },
+  "living_area_sqm": 4342.0,
+  "living_area_sqm_bbox": {
+    "ymin": 442,
+    "xmin": 134,
+    "ymax": 461,
+    "xmax": 166,
+    "page_number": 1
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 68,
+    "xmin": 160,
+    "ymax": 88,
+    "xmax": 224,
+    "page_number": 0
+  },
+  "year_of_built": 1984,
+  "year_of_built_bbox": {
+    "ymin": 234,
+    "xmin": 358,
+    "ymax": 254,
+    "xmax": 378,
+    "page_number": 0
+  },
+  "epc_date": "2009-11-19",
+  "epc_date_bbox": {
+    "ymin": 495,
+    "xmin": 134,
+    "ymax": 515,
+    "xmax": 220,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2019-11-19",
+  "epc_date_valid_until_bbox": {
+    "ymin": 515,
+    "xmin": 134,
+    "ymax": 535,
+    "xmax": 220,
+    "page_number": 0
+  }
+}

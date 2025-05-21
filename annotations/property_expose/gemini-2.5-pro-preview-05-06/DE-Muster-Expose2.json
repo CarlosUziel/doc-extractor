@@ -1,0 +1,77 @@
+{
+  "realty_address": {
+    "street_number": null,
+    "street_number_bbox": null,
+    "street_name": null,
+    "street_name_bbox": null,
+    "zip_code": "79379",
+    "zip_code_bbox": {
+      "ymin": 378,
+      "xmin": 527,
+      "ymax": 391,
+      "xmax": 585,
+      "page_number": 0
+    },
+    "city": "Schliengen",
+    "city_bbox": {
+      "ymin": 378,
+      "xmin": 590,
+      "ymax": 391,
+      "xmax": 686,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 15,
+  "epc_before_renovations_bbox": {
+    "ymin": 170,
+    "xmin": 508,
+    "ymax": 185,
+    "xmax": 558,
+    "page_number": 2
+  },
+  "living_area_sqm": 200.0,
+  "living_area_sqm_bbox": {
+    "ymin": 603,
+    "xmin": 300,
+    "ymax": 618,
+    "xmax": 358,
+    "page_number": 0
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 318,
+    "xmin": 527,
+    "ymax": 336,
+    "xmax": 721,
+    "page_number": 0
+  },
+  "year_of_built": 1997,
+  "year_of_built_bbox": {
+    "ymin": 502,
+    "xmin": 300,
+    "ymax": 517,
+    "xmax": 343,
+    "page_number": 0
+  },
+  "realty_features": [
+    "garage",
+    "terrace"
+  ],
+  "realty_features_bbox": null,
+  "surface": 500.0,
+  "surface_bbox": {
+    "ymin": 526,
+    "xmin": 300,
+    "ymax": 541,
+    "xmax": 358,
+    "page_number": 0
+  },
+  "price": 400000.0,
+  "price_bbox": {
+    "ymin": 349,
+    "xmin": 590,
+    "ymax": 364,
+    "xmax": 675,
+    "page_number": 0
+  }
+}

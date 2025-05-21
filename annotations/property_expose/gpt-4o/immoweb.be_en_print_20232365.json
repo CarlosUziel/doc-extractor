@@ -1,0 +1,26 @@
+{
+  "realty_address": {
+    "street_number": "48",
+    "street_number_bbox": null,
+    "street_name": "Chemin de Bas Ransbeck",
+    "street_name_bbox": null,
+    "zip_code": "1310",
+    "zip_code_bbox": null,
+    "city": "La Hulpe",
+    "city_bbox": null
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 145.0,
+  "living_area_sqm_bbox": null,
+  "realty_type": "house",
+  "realty_type_bbox": null,
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "realty_features": null,
+  "realty_features_bbox": null,
+  "surface": 1620.0,
+  "surface_bbox": null,
+  "price": 695000.0,
+  "price_bbox": null
+}

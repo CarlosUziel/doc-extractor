@@ -1,0 +1,72 @@
+{
+  "realty_address": {
+    "street_number": "74b",
+    "street_number_bbox": {
+      "ymin": 380,
+      "xmin": 196,
+      "ymax": 400,
+      "xmax": 222,
+      "page_number": 1
+    },
+    "street_name": "Leitgebing",
+    "street_name_bbox": {
+      "ymin": 380,
+      "xmin": 156,
+      "ymax": 400,
+      "xmax": 196,
+      "page_number": 1
+    },
+    "zip_code": "9967",
+    "zip_code_bbox": {
+      "ymin": 380,
+      "xmin": 130,
+      "ymax": 400,
+      "xmax": 156,
+      "page_number": 1
+    },
+    "city": "Imst",
+    "city_bbox": {
+      "ymin": 380,
+      "xmin": 222,
+      "ymax": 400,
+      "xmax": 250,
+      "page_number": 1
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 181.0,
+  "living_area_sqm_bbox": {
+    "ymin": 108,
+    "xmin": 250,
+    "ymax": 126,
+    "xmax": 300,
+    "page_number": 2
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 50,
+    "xmin": 284,
+    "ymax": 70,
+    "xmax": 325,
+    "page_number": 1
+  },
+  "year_of_built": 2016,
+  "year_of_built_bbox": {
+    "ymin": 50,
+    "xmin": 284,
+    "ymax": 70,
+    "xmax": 325,
+    "page_number": 1
+  },
+  "epc_date": "2016-01-07",
+  "epc_date_bbox": {
+    "ymin": 300,
+    "xmin": 250,
+    "ymax": 320,
+    "xmax": 300,
+    "page_number": 2
+  },
+  "epc_date_valid_until": null,
+  "epc_date_valid_until_bbox": null
+}

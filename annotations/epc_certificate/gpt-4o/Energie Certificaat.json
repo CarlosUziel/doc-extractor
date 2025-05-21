@@ -1,0 +1,24 @@
+{
+  "realty_address": {
+    "street_number": "13",
+    "street_number_bbox": null,
+    "street_name": "Termincxstraat",
+    "street_name_bbox": null,
+    "zip_code": "2000",
+    "zip_code_bbox": null,
+    "city": "Antwerpen",
+    "city_bbox": null
+  },
+  "epc_before_renovations": 169,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": null,
+  "living_area_sqm_bbox": null,
+  "realty_type": "apartment",
+  "realty_type_bbox": null,
+  "year_of_built": 1969,
+  "year_of_built_bbox": null,
+  "epc_date": "2013-04-16",
+  "epc_date_bbox": null,
+  "epc_date_valid_until": "2023-04-16",
+  "epc_date_valid_until_bbox": null
+}

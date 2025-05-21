@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "91",
+    "street_number_bbox": {
+      "ymin": 170,
+      "xmin": 160,
+      "ymax": 210,
+      "xmax": 230,
+      "page_number": 0
+    },
+    "street_name": "Mosenweg",
+    "street_name_bbox": {
+      "ymin": 170,
+      "xmin": 240,
+      "ymax": 210,
+      "xmax": 410,
+      "page_number": 0
+    },
+    "zip_code": "1574",
+    "zip_code_bbox": {
+      "ymin": 210,
+      "xmin": 160,
+      "ymax": 250,
+      "xmax": 230,
+      "page_number": 0
+    },
+    "city": "Mank",
+    "city_bbox": {
+      "ymin": 210,
+      "xmin": 240,
+      "ymax": 250,
+      "xmax": 350,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 32,
+  "epc_before_renovations_bbox": {
+    "ymin": 480,
+    "xmin": 380,
+    "ymax": 550,
+    "xmax": 450,
+    "page_number": 0
+  },
+  "living_area_sqm": 652.7,
+  "living_area_sqm_bbox": {
+    "ymin": 70,
+    "xmin": 160,
+    "ymax": 110,
+    "xmax": 260,
+    "page_number": 1
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 450,
+    "xmin": 150,
+    "ymax": 490,
+    "xmax": 370,
+    "page_number": 3
+  },
+  "year_of_built": 2017,
+  "year_of_built_bbox": {
+    "ymin": 250,
+    "xmin": 430,
+    "ymax": 290,
+    "xmax": 490,
+    "page_number": 0
+  },
+  "epc_date": "2017-01-01",
+  "epc_date_bbox": {
+    "ymin": 720,
+    "xmin": 170,
+    "ymax": 760,
+    "xmax": 310,
+    "page_number": 1
+  },
+  "epc_date_valid_until": "2027-01-01",
+  "epc_date_valid_until_bbox": {
+    "ymin": 760,
+    "xmin": 170,
+    "ymax": 800,
+    "xmax": 310,
+    "page_number": 1
+  }
+}

@@ -2,10 +2,17 @@ from pathlib import Path
 from typing import Any, Dict, List, Literal, Union
 
 from langchain_core.messages import HumanMessage
+from pydantic import ValidationError
 
-from config.logger import log  # Import the logger
+from config.logger import log
 from config.schema import EPCCertificateDetails, PropertyExposeDetails
 from pipelines.utils import get_llm, get_prompt_and_parser, load_pdf_images
+
+
+class ExtractionError(Exception):
+    """Custom exception for errors during data extraction or parsing."""
+
+    pass
 
 
 def run_extraction_pipeline(
@@ -32,14 +39,12 @@ def run_extraction_pipeline(
         An instance of PropertyExposeDetails or EPCCertificateDetails containing the
         extracted information, or None if an error occurs.
     """
-    # Load PDF pages as base64 encoded images
     base64_images = load_pdf_images(file_path, page_numbers=page_numbers)
     if not base64_images:
         print(f"Could not load images from {file_path}")
-        log.error(f"Could not load images from {file_path}")  # Log error
+        log.error(f"Could not load images from {file_path}")
         return None
 
-    # Ensure base64_images is a list (it should be if load_pdf_images works correctly)
     if isinstance(base64_images, str):
         base64_images = [base64_images]
 
@@ -47,7 +52,7 @@ def run_extraction_pipeline(
         llm = get_llm(provider=llm_provider, model_name=llm_model)
     except ValueError as e:
         print(f"Error initializing LLM: {e}")
-        log.error(f"Error initializing LLM: {e}")  # Log error
+        log.error(f"Error initializing LLM: {e}")
         return None
 
     prompt, parser, _ = get_prompt_and_parser(document_type)
@@ -82,15 +87,26 @@ def run_extraction_pipeline(
             )  # Log success
             return extracted_data
         else:
-            print(f"LLM response content is not in the expected format: {response}")
             log.warning(
                 f"LLM response content is not in the expected format for file: {file_path}. Response: {response}"
-            )  # Log warning
-            return None
+            )
+            raise ExtractionError(
+                f"LLM response content not in expected format for {file_path.name}"
+            )
 
-    except Exception as e:
-        print(f"Error during extraction or parsing: {e}")
+    except ValidationError as ve:
+        error_details = ve.errors()
         log.error(
-            f"Error during extraction or parsing for file: {file_path}: {e}"
-        )  # Log error
-        return None
+            f"Pydantic ValidationError for file: {file_path.name}: {error_details}"
+        )
+        raise ExtractionError(
+            f"Failed to parse {parser.pydantic_object.__name__} from completion for {file_path.name}. Got: {ve.error_count()} validation errors. First error: {error_details[0] if error_details else 'N/A'}"
+        ) from ve
+    except Exception as e:
+        log.error(
+            f"Unhandled error during extraction or parsing for file: {file_path.name}: {e}",
+            exc_info=True,
+        )
+        raise ExtractionError(
+            f"An unexpected error occurred during extraction for {file_path.name}: {e}"
+        ) from e

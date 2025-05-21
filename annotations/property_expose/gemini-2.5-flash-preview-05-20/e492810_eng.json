@@ -1,0 +1,66 @@
+{
+  "realty_address": {
+    "street_number": null,
+    "street_number_bbox": null,
+    "street_name": null,
+    "street_name_bbox": null,
+    "zip_code": "1190",
+    "zip_code_bbox": {
+      "ymin": 917,
+      "xmin": 247,
+      "ymax": 928,
+      "xmax": 275,
+      "page_number": 2
+    },
+    "city": "Wien",
+    "city_bbox": {
+      "ymin": 917,
+      "xmin": 279,
+      "ymax": 928,
+      "xmax": 318,
+      "page_number": 2
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 51.0,
+  "living_area_sqm_bbox": {
+    "ymin": 637,
+    "xmin": 341,
+    "ymax": 648,
+    "xmax": 356,
+    "page_number": 2
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 139,
+    "xmin": 206,
+    "ymax": 151,
+    "xmax": 271,
+    "page_number": 3
+  },
+  "year_of_built": 2022,
+  "year_of_built_bbox": {
+    "ymin": 864,
+    "xmin": 347,
+    "ymax": 875,
+    "xmax": 387,
+    "page_number": 2
+  },
+  "realty_features": [
+    "lift",
+    "garage",
+    "balcony"
+  ],
+  "realty_features_bbox": null,
+  "surface": null,
+  "surface_bbox": null,
+  "price": 540000.0,
+  "price_bbox": {
+    "ymin": 785,
+    "xmin": 349,
+    "ymax": 796,
+    "xmax": 421,
+    "page_number": 2
+  }
+}

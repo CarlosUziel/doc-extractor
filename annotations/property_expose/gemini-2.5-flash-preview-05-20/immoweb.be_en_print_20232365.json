@@ -1,0 +1,74 @@
+{
+  "realty_address": {
+    "street_number": "64",
+    "street_number_bbox": {
+      "ymin": 147,
+      "xmin": 140,
+      "ymax": 157,
+      "xmax": 159,
+      "page_number": 0
+    },
+    "street_name": "Chemin de Bas Ranisbeck",
+    "street_name_bbox": {
+      "ymin": 130,
+      "xmin": 140,
+      "ymax": 140,
+      "xmax": 271,
+      "page_number": 0
+    },
+    "zip_code": "1310",
+    "zip_code_bbox": {
+      "ymin": 147,
+      "xmin": 274,
+      "ymax": 157,
+      "xmax": 307,
+      "page_number": 0
+    },
+    "city": "La Hulpe",
+    "city_bbox": {
+      "ymin": 147,
+      "xmin": 310,
+      "ymax": 157,
+      "xmax": 360,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 245.0,
+  "living_area_sqm_bbox": {
+    "ymin": 164,
+    "xmin": 140,
+    "ymax": 174,
+    "xmax": 177,
+    "page_number": 0
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 113,
+    "xmin": 140,
+    "ymax": 123,
+    "xmax": 173,
+    "page_number": 0
+  },
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "realty_features": null,
+  "realty_features_bbox": null,
+  "surface": 1020.0,
+  "surface_bbox": {
+    "ymin": 181,
+    "xmin": 140,
+    "ymax": 191,
+    "xmax": 184,
+    "page_number": 0
+  },
+  "price": 695000.0,
+  "price_bbox": {
+    "ymin": 198,
+    "xmin": 888,
+    "ymax": 208,
+    "xmax": 938,
+    "page_number": 0
+  }
+}

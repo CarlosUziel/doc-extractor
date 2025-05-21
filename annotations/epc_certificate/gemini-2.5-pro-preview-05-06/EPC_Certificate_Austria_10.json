@@ -1,0 +1,72 @@
+{
+  "realty_address": {
+    "street_number": "74b",
+    "street_number_bbox": {
+      "ymin": 183,
+      "xmin": 334,
+      "ymax": 195,
+      "xmax": 359,
+      "page_number": 0
+    },
+    "street_name": "Leitgebring",
+    "street_name_bbox": {
+      "ymin": 183,
+      "xmin": 259,
+      "ymax": 195,
+      "xmax": 332,
+      "page_number": 0
+    },
+    "zip_code": "9967",
+    "zip_code_bbox": {
+      "ymin": 200,
+      "xmin": 259,
+      "ymax": 212,
+      "xmax": 294,
+      "page_number": 0
+    },
+    "city": "Imst",
+    "city_bbox": {
+      "ymin": 183,
+      "xmin": 596,
+      "ymax": 195,
+      "xmax": 628,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 145.0,
+  "living_area_sqm_bbox": {
+    "ymin": 150,
+    "xmin": 245,
+    "ymax": 161,
+    "xmax": 271,
+    "page_number": 1
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 166,
+    "xmin": 259,
+    "ymax": 179,
+    "xmax": 351,
+    "page_number": 0
+  },
+  "year_of_built": 2016,
+  "year_of_built_bbox": {
+    "ymin": 149,
+    "xmin": 698,
+    "ymax": 162,
+    "xmax": 730,
+    "page_number": 0
+  },
+  "epc_date": "2016-01-07",
+  "epc_date_bbox": {
+    "ymin": 801,
+    "xmin": 245,
+    "ymax": 812,
+    "xmax": 318,
+    "page_number": 1
+  },
+  "epc_date_valid_until": null,
+  "epc_date_valid_until_bbox": null
+}

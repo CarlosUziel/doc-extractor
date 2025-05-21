@@ -1,0 +1,64 @@
+{
+  "realty_address": {
+    "street_number": null,
+    "street_number_bbox": null,
+    "street_name": null,
+    "street_name_bbox": null,
+    "zip_code": "1190",
+    "zip_code_bbox": {
+      "ymin": 525,
+      "xmin": 238,
+      "ymax": 540,
+      "xmax": 271,
+      "page_number": 1
+    },
+    "city": "Wien",
+    "city_bbox": {
+      "ymin": 525,
+      "xmin": 277,
+      "ymax": 540,
+      "xmax": 317,
+      "page_number": 1
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 104.0,
+  "living_area_sqm_bbox": {
+    "ymin": 594,
+    "xmin": 290,
+    "ymax": 610,
+    "xmax": 323,
+    "page_number": 1
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 864,
+    "xmin": 231,
+    "ymax": 880,
+    "xmax": 292,
+    "page_number": 1
+  },
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "realty_features": [
+    "terrace"
+  ],
+  "realty_features_bbox": {
+    "ymin": 622,
+    "xmin": 127,
+    "ymax": 638,
+    "xmax": 353,
+    "page_number": 1
+  },
+  "surface": null,
+  "surface_bbox": null,
+  "price": 1155000.0,
+  "price_bbox": {
+    "ymin": 766,
+    "xmin": 273,
+    "ymax": 782,
+    "xmax": 420,
+    "page_number": 1
+  }
+}

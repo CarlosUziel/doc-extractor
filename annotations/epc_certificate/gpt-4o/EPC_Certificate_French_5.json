@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "106",
+    "street_number_bbox": {
+      "ymin": 210,
+      "xmin": 260,
+      "ymax": 250,
+      "xmax": 300,
+      "page_number": 0
+    },
+    "street_name": "Rue Émile Delva",
+    "street_name_bbox": {
+      "ymin": 210,
+      "xmin": 310,
+      "ymax": 250,
+      "xmax": 450,
+      "page_number": 0
+    },
+    "zip_code": "1020",
+    "zip_code_bbox": {
+      "ymin": 210,
+      "xmin": 460,
+      "ymax": 250,
+      "xmax": 500,
+      "page_number": 0
+    },
+    "city": "Bruxelles",
+    "city_bbox": {
+      "ymin": 210,
+      "xmin": 510,
+      "ymax": 250,
+      "xmax": 580,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 278,
+  "epc_before_renovations_bbox": {
+    "ymin": 510,
+    "xmin": 530,
+    "ymax": 550,
+    "xmax": 570,
+    "page_number": 0
+  },
+  "living_area_sqm": 93.0,
+  "living_area_sqm_bbox": {
+    "ymin": 260,
+    "xmin": 520,
+    "ymax": 300,
+    "xmax": 560,
+    "page_number": 0
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 50,
+    "xmin": 270,
+    "ymax": 90,
+    "xmax": 370,
+    "page_number": 0
+  },
+  "year_of_built": 1956,
+  "year_of_built_bbox": {
+    "ymin": 400,
+    "xmin": 110,
+    "ymax": 440,
+    "xmax": 200,
+    "page_number": 9
+  },
+  "epc_date": "2024-04-04",
+  "epc_date_bbox": {
+    "ymin": 260,
+    "xmin": 180,
+    "ymax": 300,
+    "xmax": 280,
+    "page_number": 8
+  },
+  "epc_date_valid_until": "2034-04-04",
+  "epc_date_valid_until_bbox": {
+    "ymin": 300,
+    "xmin": 160,
+    "ymax": 340,
+    "xmax": 320,
+    "page_number": 7
+  }
+}

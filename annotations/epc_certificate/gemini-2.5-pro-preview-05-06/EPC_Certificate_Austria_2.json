@@ -1,0 +1,78 @@
+{
+  "realty_address": {
+    "street_number": null,
+    "street_number_bbox": null,
+    "street_name": "Weighing Da",
+    "street_name_bbox": {
+      "ymin": 235,
+      "xmin": 247,
+      "ymax": 245,
+      "xmax": 308,
+      "page_number": 0
+    },
+    "zip_code": "6815",
+    "zip_code_bbox": {
+      "ymin": 260,
+      "xmin": 247,
+      "ymax": 270,
+      "xmax": 273,
+      "page_number": 0
+    },
+    "city": "Ansfelden",
+    "city_bbox": {
+      "ymin": 260,
+      "xmin": 293,
+      "ymax": 270,
+      "xmax": 340,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 309,
+  "epc_before_renovations_bbox": {
+    "ymin": 715,
+    "xmin": 662,
+    "ymax": 740,
+    "xmax": 706,
+    "page_number": 0
+  },
+  "living_area_sqm": 196.3,
+  "living_area_sqm_bbox": {
+    "ymin": 184,
+    "xmin": 410,
+    "ymax": 197,
+    "xmax": 453,
+    "page_number": 1
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 210,
+    "xmin": 247,
+    "ymax": 220,
+    "xmax": 270,
+    "page_number": 0
+  },
+  "year_of_built": 1955,
+  "year_of_built_bbox": {
+    "ymin": 184,
+    "xmin": 755,
+    "ymax": 195,
+    "xmax": 782,
+    "page_number": 0
+  },
+  "epc_date": "2010-02-17",
+  "epc_date_bbox": {
+    "ymin": 857,
+    "xmin": 754,
+    "ymax": 868,
+    "xmax": 809,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2020-02-16",
+  "epc_date_valid_until_bbox": {
+    "ymin": 879,
+    "xmin": 754,
+    "ymax": 890,
+    "xmax": 809,
+    "page_number": 0
+  }
+}

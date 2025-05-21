@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "75",
+    "street_number_bbox": {
+      "ymin": 188,
+      "xmin": 179,
+      "ymax": 199,
+      "xmax": 197,
+      "page_number": 0
+    },
+    "street_name": "Mathieuboulevard",
+    "street_name_bbox": {
+      "ymin": 172,
+      "xmin": 179,
+      "ymax": 183,
+      "xmax": 305,
+      "page_number": 0
+    },
+    "zip_code": "4990",
+    "zip_code_bbox": {
+      "ymin": 203,
+      "xmin": 179,
+      "ymax": 214,
+      "xmax": 216,
+      "page_number": 0
+    },
+    "city": "Ronse",
+    "city_bbox": {
+      "ymin": 203,
+      "xmin": 309,
+      "ymax": 214,
+      "xmax": 350,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 235,
+  "epc_before_renovations_bbox": {
+    "ymin": 341,
+    "xmin": 184,
+    "ymax": 410,
+    "xmax": 365,
+    "page_number": 0
+  },
+  "living_area_sqm": 151.44,
+  "living_area_sqm_bbox": {
+    "ymin": 358,
+    "xmin": 354,
+    "ymax": 369,
+    "xmax": 398,
+    "page_number": 3
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 250,
+    "xmin": 179,
+    "ymax": 263,
+    "xmax": 273,
+    "page_number": 0
+  },
+  "year_of_built": 1961,
+  "year_of_built_bbox": {
+    "ymin": 281,
+    "xmin": 179,
+    "ymax": 292,
+    "xmax": 213,
+    "page_number": 0
+  },
+  "epc_date": "2017-06-20",
+  "epc_date_bbox": {
+    "ymin": 756,
+    "xmin": 130,
+    "ymax": 767,
+    "xmax": 212,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2028-06-13",
+  "epc_date_valid_until_bbox": {
+    "ymin": 894,
+    "xmin": 713,
+    "ymax": 908,
+    "xmax": 828,
+    "page_number": 0
+  }
+}

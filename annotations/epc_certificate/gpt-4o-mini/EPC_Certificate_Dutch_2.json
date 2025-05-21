@@ -1,0 +1,24 @@
+{
+  "realty_address": {
+    "street_number": "61",
+    "street_number_bbox": null,
+    "street_name": "Lecomteweg",
+    "street_name_bbox": null,
+    "zip_code": "9991",
+    "zip_code_bbox": null,
+    "city": "Couvin",
+    "city_bbox": null
+  },
+  "epc_before_renovations": 228,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 1252.49,
+  "living_area_sqm_bbox": null,
+  "realty_type": "house",
+  "realty_type_bbox": null,
+  "year_of_built": 1999,
+  "year_of_built_bbox": null,
+  "epc_date": "2015-10-26",
+  "epc_date_bbox": null,
+  "epc_date_valid_until": "2026-10-16",
+  "epc_date_valid_until_bbox": null
+}

@@ -1,0 +1,78 @@
+{
+  "realty_address": {
+    "street_number": "6, 6A, 6B, 6C, 6D",
+    "street_number_bbox": {
+      "ymin": 223,
+      "xmin": 269,
+      "ymax": 233,
+      "xmax": 474,
+      "page_number": 0
+    },
+    "street_name": "Posener Str.",
+    "street_name_bbox": {
+      "ymin": 223,
+      "xmin": 152,
+      "ymax": 233,
+      "xmax": 263,
+      "page_number": 0
+    },
+    "zip_code": "38723",
+    "zip_code_bbox": {
+      "ymin": 195,
+      "xmin": 520,
+      "ymax": 204,
+      "xmax": 570,
+      "page_number": 0
+    },
+    "city": "Seesen",
+    "city_bbox": {
+      "ymin": 195,
+      "xmin": 578,
+      "ymax": 204,
+      "xmax": 633,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 2352.6,
+  "living_area_sqm_bbox": {
+    "ymin": 318,
+    "xmin": 151,
+    "ymax": 327,
+    "xmax": 233,
+    "page_number": 0
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 177,
+    "xmin": 152,
+    "ymax": 185,
+    "xmax": 416,
+    "page_number": 0
+  },
+  "year_of_built": 1968,
+  "year_of_built_bbox": {
+    "ymin": 239,
+    "xmin": 152,
+    "ymax": 248,
+    "xmax": 194,
+    "page_number": 0
+  },
+  "epc_date": "2018-06-01",
+  "epc_date_bbox": {
+    "ymin": 729,
+    "xmin": 645,
+    "ymax": 737,
+    "xmax": 721,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2028-06-01",
+  "epc_date_valid_until_bbox": {
+    "ymin": 115,
+    "xmin": 152,
+    "ymax": 124,
+    "xmax": 241,
+    "page_number": 0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "realty_address": null,
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": null,
+  "living_area_sqm_bbox": null,
+  "realty_type": null,
+  "realty_type_bbox": null,
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "realty_features": null,
+  "realty_features_bbox": null,
+  "surface": null,
+  "surface_bbox": null,
+  "price": null,
+  "price_bbox": null
+}

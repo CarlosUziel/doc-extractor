@@ -1,0 +1,78 @@
+{
+  "realty_address": {
+    "street_number": "55",
+    "street_number_bbox": {
+      "ymin": 140,
+      "xmin": 192,
+      "ymax": 148,
+      "xmax": 210,
+      "page_number": 0
+    },
+    "street_name": "Louisweg",
+    "street_name_bbox": {
+      "ymin": 126,
+      "xmin": 192,
+      "ymax": 135,
+      "xmax": 255,
+      "page_number": 0
+    },
+    "zip_code": "2030",
+    "zip_code_bbox": {
+      "ymin": 153,
+      "xmin": 192,
+      "ymax": 162,
+      "xmax": 225,
+      "page_number": 0
+    },
+    "city": "Walcourt",
+    "city_bbox": {
+      "ymin": 153,
+      "xmin": 327,
+      "ymax": 162,
+      "xmax": 385,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 228,
+  "epc_before_renovations_bbox": {
+    "ymin": 256,
+    "xmin": 199,
+    "ymax": 309,
+    "xmax": 378,
+    "page_number": 0
+  },
+  "living_area_sqm": 105.99,
+  "living_area_sqm_bbox": {
+    "ymin": 250,
+    "xmin": 415,
+    "ymax": 259,
+    "xmax": 463,
+    "page_number": 4
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 194,
+    "xmin": 192,
+    "ymax": 203,
+    "xmax": 331,
+    "page_number": 0
+  },
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "epc_date": "2015-10-26",
+  "epc_date_bbox": {
+    "ymin": 571,
+    "xmin": 136,
+    "ymax": 582,
+    "xmax": 216,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2026-10-12",
+  "epc_date_valid_until_bbox": {
+    "ymin": 678,
+    "xmin": 752,
+    "ymax": 688,
+    "xmax": 882,
+    "page_number": 0
+  }
+}

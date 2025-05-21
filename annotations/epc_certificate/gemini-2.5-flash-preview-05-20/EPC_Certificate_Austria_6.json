@@ -1,0 +1,72 @@
+{
+  "realty_address": {
+    "street_number": "7",
+    "street_number_bbox": {
+      "ymin": 201,
+      "xmin": 378,
+      "ymax": 213,
+      "xmax": 389,
+      "page_number": 0
+    },
+    "street_name": "Ziegelweg",
+    "street_name_bbox": {
+      "ymin": 201,
+      "xmin": 270,
+      "ymax": 213,
+      "xmax": 369,
+      "page_number": 0
+    },
+    "zip_code": "2372",
+    "zip_code_bbox": {
+      "ymin": 221,
+      "xmin": 270,
+      "ymax": 233,
+      "xmax": 319,
+      "page_number": 0
+    },
+    "city": "Wilhermsburg",
+    "city_bbox": {
+      "ymin": 221,
+      "xmin": 325,
+      "ymax": 233,
+      "xmax": 421,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 237.04,
+  "living_area_sqm_bbox": {
+    "ymin": 156,
+    "xmin": 296,
+    "ymax": 170,
+    "xmax": 361,
+    "page_number": 1
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 156,
+    "xmin": 270,
+    "ymax": 170,
+    "xmax": 330,
+    "page_number": 0
+  },
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "epc_date": "2013-09-11",
+  "epc_date_bbox": {
+    "ymin": 801,
+    "xmin": 201,
+    "ymax": 814,
+    "xmax": 300,
+    "page_number": 1
+  },
+  "epc_date_valid_until": "2023-09-10",
+  "epc_date_valid_until_bbox": {
+    "ymin": 831,
+    "xmin": 201,
+    "ymax": 844,
+    "xmax": 300,
+    "page_number": 1
+  }
+}

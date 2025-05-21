@@ -1,0 +1,24 @@
+{
+  "realty_address": {
+    "street_number": "9a",
+    "street_number_bbox": null,
+    "street_name": "Wolfsgrube",
+    "street_name_bbox": null,
+    "zip_code": "6390",
+    "zip_code_bbox": null,
+    "city": "Ferlach",
+    "city_bbox": null
+  },
+  "epc_before_renovations": 35,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": null,
+  "living_area_sqm_bbox": null,
+  "realty_type": null,
+  "realty_type_bbox": null,
+  "year_of_built": 2020,
+  "year_of_built_bbox": null,
+  "epc_date": "2020-04-02",
+  "epc_date_bbox": null,
+  "epc_date_valid_until": "2030-04-02",
+  "epc_date_valid_until_bbox": null
+}

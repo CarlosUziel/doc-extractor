@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "69",
+    "street_number_bbox": {
+      "ymin": 206,
+      "xmin": 479,
+      "ymax": 220,
+      "xmax": 494,
+      "page_number": 0
+    },
+    "street_name": "Waterweg",
+    "street_name_bbox": {
+      "ymin": 206,
+      "xmin": 421,
+      "ymax": 220,
+      "xmax": 476,
+      "page_number": 0
+    },
+    "zip_code": "6437",
+    "zip_code_bbox": {
+      "ymin": 227,
+      "xmin": 421,
+      "ymax": 241,
+      "xmax": 457,
+      "page_number": 0
+    },
+    "city": "Kindberg",
+    "city_bbox": {
+      "ymin": 227,
+      "xmin": 461,
+      "ymax": 241,
+      "xmax": 512,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 41,
+  "epc_before_renovations_bbox": {
+    "ymin": 326,
+    "xmin": 409,
+    "ymax": 340,
+    "xmax": 446,
+    "page_number": 1
+  },
+  "living_area_sqm": 295.5,
+  "living_area_sqm_bbox": {
+    "ymin": 167,
+    "xmin": 279,
+    "ymax": 181,
+    "xmax": 325,
+    "page_number": 1
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 184,
+    "xmin": 421,
+    "ymax": 198,
+    "xmax": 531,
+    "page_number": 0
+  },
+  "year_of_built": 1975,
+  "year_of_built_bbox": {
+    "ymin": 154,
+    "xmin": 651,
+    "ymax": 168,
+    "xmax": 686,
+    "page_number": 0
+  },
+  "epc_date": "2018-01-10",
+  "epc_date_bbox": {
+    "ymin": 812,
+    "xmin": 251,
+    "ymax": 825,
+    "xmax": 323,
+    "page_number": 1
+  },
+  "epc_date_valid_until": "2028-01-09",
+  "epc_date_valid_until_bbox": {
+    "ymin": 835,
+    "xmin": 251,
+    "ymax": 848,
+    "xmax": 323,
+    "page_number": 1
+  }
+}

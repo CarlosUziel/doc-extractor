@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "59",
+    "street_number_bbox": {
+      "ymin": 0,
+      "xmin": 0,
+      "ymax": 0,
+      "xmax": 0,
+      "page_number": null
+    },
+    "street_name": "Rue de la Royauté",
+    "street_name_bbox": {
+      "ymin": 0,
+      "xmin": 0,
+      "ymax": 0,
+      "xmax": 0,
+      "page_number": null
+    },
+    "zip_code": "1020",
+    "zip_code_bbox": {
+      "ymin": 0,
+      "xmin": 0,
+      "ymax": 0,
+      "xmax": 0,
+      "page_number": null
+    },
+    "city": "Bruxelles",
+    "city_bbox": {
+      "ymin": 0,
+      "xmin": 0,
+      "ymax": 0,
+      "xmax": 0,
+      "page_number": null
+    }
+  },
+  "epc_before_renovations": 165,
+  "epc_before_renovations_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 0,
+    "xmax": 0,
+    "page_number": null
+  },
+  "living_area_sqm": 165.0,
+  "living_area_sqm_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 0,
+    "xmax": 0,
+    "page_number": null
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 0,
+    "xmax": 0,
+    "page_number": null
+  },
+  "year_of_built": null,
+  "year_of_built_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 0,
+    "xmax": 0,
+    "page_number": null
+  },
+  "epc_date": "2020-12-07",
+  "epc_date_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 0,
+    "xmax": 0,
+    "page_number": null
+  },
+  "epc_date_valid_until": "2029-12-07",
+  "epc_date_valid_until_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 0,
+    "xmax": 0,
+    "page_number": null
+  }
+}

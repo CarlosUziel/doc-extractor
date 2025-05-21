@@ -1,0 +1,72 @@
+{
+  "realty_address": {
+    "street_number": "69",
+    "street_number_bbox": {
+      "ymin": 136,
+      "xmin": 56,
+      "ymax": 156,
+      "xmax": 78,
+      "page_number": 0
+    },
+    "street_name": "Waltherweg",
+    "street_name_bbox": {
+      "ymin": 116,
+      "xmin": 56,
+      "ymax": 136,
+      "xmax": 156,
+      "page_number": 0
+    },
+    "zip_code": null,
+    "zip_code_bbox": null,
+    "city": "Kindberg",
+    "city_bbox": {
+      "ymin": 156,
+      "xmin": 56,
+      "ymax": 176,
+      "xmax": 156,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 295.5,
+  "living_area_sqm_bbox": {
+    "ymin": 201,
+    "xmin": 56,
+    "ymax": 221,
+    "xmax": 156,
+    "page_number": 0
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 76,
+    "xmin": 56,
+    "ymax": 96,
+    "xmax": 156,
+    "page_number": 0
+  },
+  "year_of_built": 1975,
+  "year_of_built_bbox": {
+    "ymin": 96,
+    "xmin": 56,
+    "ymax": 116,
+    "xmax": 156,
+    "page_number": 0
+  },
+  "epc_date": "2018-01-10",
+  "epc_date_bbox": {
+    "ymin": 20,
+    "xmin": 56,
+    "ymax": 40,
+    "xmax": 156,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2028-01-09",
+  "epc_date_valid_until_bbox": {
+    "ymin": 40,
+    "xmin": 56,
+    "ymax": 60,
+    "xmax": 156,
+    "page_number": 0
+  }
+}

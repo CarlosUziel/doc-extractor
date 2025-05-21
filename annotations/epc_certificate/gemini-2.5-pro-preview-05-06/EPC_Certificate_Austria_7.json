@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "547",
+    "street_number_bbox": {
+      "ymin": 187,
+      "xmin": 277,
+      "ymax": 199,
+      "xmax": 297,
+      "page_number": 0
+    },
+    "street_name": "Starking",
+    "street_name_bbox": {
+      "ymin": 187,
+      "xmin": 228,
+      "ymax": 199,
+      "xmax": 274,
+      "page_number": 0
+    },
+    "zip_code": "4485",
+    "zip_code_bbox": {
+      "ymin": 207,
+      "xmin": 228,
+      "ymax": 219,
+      "xmax": 259,
+      "page_number": 0
+    },
+    "city": "Litschau",
+    "city_bbox": {
+      "ymin": 207,
+      "xmin": 264,
+      "ymax": 219,
+      "xmax": 312,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 77,
+  "epc_before_renovations_bbox": {
+    "ymin": 573,
+    "xmin": 790,
+    "ymax": 585,
+    "xmax": 828,
+    "page_number": 1
+  },
+  "living_area_sqm": 419.25,
+  "living_area_sqm_bbox": {
+    "ymin": 159,
+    "xmin": 251,
+    "ymax": 171,
+    "xmax": 300,
+    "page_number": 1
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 167,
+    "xmin": 228,
+    "ymax": 179,
+    "xmax": 318,
+    "page_number": 0
+  },
+  "year_of_built": 1971,
+  "year_of_built_bbox": {
+    "ymin": 147,
+    "xmin": 735,
+    "ymax": 158,
+    "xmax": 763,
+    "page_number": 0
+  },
+  "epc_date": "2017-05-18",
+  "epc_date_bbox": {
+    "ymin": 808,
+    "xmin": 243,
+    "ymax": 820,
+    "xmax": 311,
+    "page_number": 1
+  },
+  "epc_date_valid_until": "2027-05-17",
+  "epc_date_valid_until_bbox": {
+    "ymin": 828,
+    "xmin": 243,
+    "ymax": 840,
+    "xmax": 311,
+    "page_number": 1
+  }
+}

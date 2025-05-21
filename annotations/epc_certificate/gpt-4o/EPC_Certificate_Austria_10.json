@@ -1,0 +1,66 @@
+{
+  "realty_address": {
+    "street_number": "Leitgebweg 74b",
+    "street_number_bbox": {
+      "ymin": 194,
+      "xmin": 203,
+      "ymax": 210,
+      "xmax": 245,
+      "page_number": 0
+    },
+    "street_name": null,
+    "street_name_bbox": null,
+    "zip_code": "9967",
+    "zip_code_bbox": {
+      "ymin": 194,
+      "xmin": 253,
+      "ymax": 210,
+      "xmax": 280,
+      "page_number": 0
+    },
+    "city": "Imst",
+    "city_bbox": {
+      "ymin": 194,
+      "xmin": 288,
+      "ymax": 210,
+      "xmax": 321,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 181.0,
+  "living_area_sqm_bbox": {
+    "ymin": 82,
+    "xmin": 45,
+    "ymax": 94,
+    "xmax": 85,
+    "page_number": 1
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 133,
+    "xmin": 74,
+    "ymax": 145,
+    "xmax": 143,
+    "page_number": 0
+  },
+  "year_of_built": 2016,
+  "year_of_built_bbox": {
+    "ymin": 182,
+    "xmin": 190,
+    "ymax": 198,
+    "xmax": 215,
+    "page_number": 0
+  },
+  "epc_date": "2016-01-07",
+  "epc_date_bbox": {
+    "ymin": 619,
+    "xmin": 45,
+    "ymax": 632,
+    "xmax": 110,
+    "page_number": 1
+  },
+  "epc_date_valid_until": null,
+  "epc_date_valid_until_bbox": null
+}

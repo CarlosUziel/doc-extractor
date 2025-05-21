@@ -1,0 +1,54 @@
+{
+  "realty_address": {
+    "street_number": null,
+    "street_number_bbox": null,
+    "street_name": "Wien",
+    "street_name_bbox": {
+      "ymin": 0,
+      "xmin": 0,
+      "ymax": 1000,
+      "xmax": 1000,
+      "page_number": 2
+    },
+    "zip_code": "1010",
+    "zip_code_bbox": null,
+    "city": null,
+    "city_bbox": null
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 292.0,
+  "living_area_sqm_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 1000,
+    "xmax": 1000,
+    "page_number": 2
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": null,
+  "year_of_built": 2008,
+  "year_of_built_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 1000,
+    "xmax": 1000,
+    "page_number": 4
+  },
+  "realty_features": [
+    "lift",
+    "garage",
+    "pool"
+  ],
+  "realty_features_bbox": null,
+  "surface": null,
+  "surface_bbox": null,
+  "price": 6300000.0,
+  "price_bbox": {
+    "ymin": 0,
+    "xmin": 0,
+    "ymax": 1000,
+    "xmax": 1000,
+    "page_number": 3
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "realty_address": {
+    "street_number": null,
+    "street_number_bbox": null,
+    "street_name": "Wien",
+    "street_name_bbox": null,
+    "zip_code": "1190",
+    "zip_code_bbox": null,
+    "city": "Wien",
+    "city_bbox": null
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 104.0,
+  "living_area_sqm_bbox": null,
+  "realty_type": "apartment",
+  "realty_type_bbox": null,
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "realty_features": null,
+  "realty_features_bbox": null,
+  "surface": 34.0,
+  "surface_bbox": null,
+  "price": 1155000.0,
+  "price_bbox": null
+}

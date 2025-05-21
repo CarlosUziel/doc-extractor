@@ -1,0 +1,73 @@
+{
+  "realty_address": {
+    "street_number": null,
+    "street_number_bbox": null,
+    "street_name": null,
+    "street_name_bbox": null,
+    "zip_code": null,
+    "zip_code_bbox": null,
+    "city": "Kirchdorf in Tirol",
+    "city_bbox": {
+      "ymin": 848,
+      "xmin": 83,
+      "ymax": 868,
+      "xmax": 300,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 49,
+  "epc_before_renovations_bbox": {
+    "ymin": 396,
+    "xmin": 314,
+    "ymax": 409,
+    "xmax": 343,
+    "page_number": 1
+  },
+  "living_area_sqm": 60.0,
+  "living_area_sqm_bbox": {
+    "ymin": 256,
+    "xmin": 314,
+    "ymax": 270,
+    "xmax": 331,
+    "page_number": 1
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 791,
+    "xmin": 334,
+    "ymax": 816,
+    "xmax": 453,
+    "page_number": 0
+  },
+  "year_of_built": 2021,
+  "year_of_built_bbox": {
+    "ymin": 368,
+    "xmin": 314,
+    "ymax": 382,
+    "xmax": 343,
+    "page_number": 1
+  },
+  "realty_features": [
+    "balcony",
+    "terrace",
+    "garage",
+    "basement"
+  ],
+  "realty_features_bbox": {
+    "ymin": 380,
+    "xmin": 526,
+    "ymax": 394,
+    "xmax": 590,
+    "page_number": 1
+  },
+  "surface": null,
+  "surface_bbox": null,
+  "price": 498000.0,
+  "price_bbox": {
+    "ymin": 890,
+    "xmin": 197,
+    "ymax": 912,
+    "xmax": 315,
+    "page_number": 0
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "realty_address": {
+    "street_number": "9",
+    "street_number_bbox": {
+      "ymin": 841,
+      "xmin": 285,
+      "ymax": 854,
+      "xmax": 294,
+      "page_number": 4
+    },
+    "street_name": "Merowingerstraße",
+    "street_name_bbox": {
+      "ymin": 841,
+      "xmin": 118,
+      "ymax": 854,
+      "xmax": 280,
+      "page_number": 4
+    },
+    "zip_code": "50677",
+    "zip_code_bbox": {
+      "ymin": 841,
+      "xmin": 299,
+      "ymax": 854,
+      "xmax": 350,
+      "page_number": 4
+    },
+    "city": "Köln",
+    "city_bbox": {
+      "ymin": 841,
+      "xmin": 355,
+      "ymax": 854,
+      "xmax": 396,
+      "page_number": 4
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 1199.0,
+  "living_area_sqm_bbox": {
+    "ymin": 698,
+    "xmin": 381,
+    "ymax": 712,
+    "xmax": 429,
+    "page_number": 6
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 776,
+    "xmin": 118,
+    "ymax": 789,
+    "xmax": 329,
+    "page_number": 4
+  },
+  "year_of_built": 1947,
+  "year_of_built_bbox": {
+    "ymin": 866,
+    "xmin": 439,
+    "ymax": 879,
+    "xmax": 478,
+    "page_number": 0
+  },
+  "realty_features": [
+    "basement",
+    "balcony",
+    "terrace"
+  ],
+  "realty_features_bbox": null,
+  "surface": 461.0,
+  "surface_bbox": {
+    "ymin": 794,
+    "xmin": 439,
+    "ymax": 808,
+    "xmax": 477,
+    "page_number": 0
+  },
+  "price": null,
+  "price_bbox": null
+}

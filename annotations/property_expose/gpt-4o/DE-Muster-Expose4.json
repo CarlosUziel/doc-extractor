@@ -1,0 +1,28 @@
+{
+  "realty_address": {
+    "street_number": "60",
+    "street_number_bbox": null,
+    "street_name": "Vogt-Groth-Weg",
+    "street_name_bbox": null,
+    "zip_code": "22609",
+    "zip_code_bbox": null,
+    "city": "Hamburg",
+    "city_bbox": null
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 89.0,
+  "living_area_sqm_bbox": null,
+  "realty_type": "apartment",
+  "realty_type_bbox": null,
+  "year_of_built": 1971,
+  "year_of_built_bbox": null,
+  "realty_features": [
+    "garage"
+  ],
+  "realty_features_bbox": null,
+  "surface": null,
+  "surface_bbox": null,
+  "price": 332000.0,
+  "price_bbox": null
+}

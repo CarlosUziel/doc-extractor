@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "106",
+    "street_number_bbox": {
+      "ymin": 156,
+      "xmin": 300,
+      "ymax": 169,
+      "xmax": 326,
+      "page_number": 0
+    },
+    "street_name": "Rue Émile Deva",
+    "street_name_bbox": {
+      "ymin": 156,
+      "xmin": 227,
+      "ymax": 170,
+      "xmax": 298,
+      "page_number": 0
+    },
+    "zip_code": "1020",
+    "zip_code_bbox": {
+      "ymin": 169,
+      "xmin": 227,
+      "ymax": 182,
+      "xmax": 256,
+      "page_number": 0
+    },
+    "city": "Bruxelles",
+    "city_bbox": {
+      "ymin": 169,
+      "xmin": 257,
+      "ymax": 182,
+      "xmax": 308,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 278,
+  "epc_before_renovations_bbox": {
+    "ymin": 614,
+    "xmin": 620,
+    "ymax": 651,
+    "xmax": 659,
+    "page_number": 0
+  },
+  "living_area_sqm": 93.0,
+  "living_area_sqm_bbox": {
+    "ymin": 254,
+    "xmin": 227,
+    "ymax": 268,
+    "xmax": 266,
+    "page_number": 0
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 198,
+    "xmin": 88,
+    "ymax": 211,
+    "xmax": 167,
+    "page_number": 0
+  },
+  "year_of_built": 1956,
+  "year_of_built_bbox": {
+    "ymin": 440,
+    "xmin": 395,
+    "ymax": 452,
+    "xmax": 429,
+    "page_number": 8
+  },
+  "epc_date": "2024-04-04",
+  "epc_date_bbox": {
+    "ymin": 377,
+    "xmin": 279,
+    "ymax": 390,
+    "xmax": 360,
+    "page_number": 8
+  },
+  "epc_date_valid_until": "2034-04-04",
+  "epc_date_valid_until_bbox": {
+    "ymin": 297,
+    "xmin": 379,
+    "ymax": 310,
+    "xmax": 462,
+    "page_number": 6
+  }
+}

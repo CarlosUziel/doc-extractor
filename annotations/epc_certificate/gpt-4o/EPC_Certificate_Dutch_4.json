@@ -1,0 +1,24 @@
+{
+  "realty_address": {
+    "street_number": "75",
+    "street_number_bbox": null,
+    "street_name": "Mathieuboulevard",
+    "street_name_bbox": null,
+    "zip_code": "4990",
+    "zip_code_bbox": null,
+    "city": "Ronse",
+    "city_bbox": null
+  },
+  "epc_before_renovations": 235,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 91.4,
+  "living_area_sqm_bbox": null,
+  "realty_type": "apartment",
+  "realty_type_bbox": null,
+  "year_of_built": 1961,
+  "year_of_built_bbox": null,
+  "epc_date": "2017-06-20",
+  "epc_date_bbox": null,
+  "epc_date_valid_until": "2028-06-13",
+  "epc_date_valid_until_bbox": null
+}

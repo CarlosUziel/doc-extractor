@@ -94,10 +94,21 @@ def pdf_page_to_base64(
     try:
         page = pdf_document.load_page(page_number - 1)
         pix = page.get_pixmap()  # type: ignore
+        if not isinstance(pix.samples, bytes):
+            print(
+                f"Error: pix.samples is not bytes for page {page_number} in {pdf_document.name}. Type: {type(pix.samples)}"
+            )
+            return None
         img = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
         buffer = io.BytesIO()
         img.save(buffer, format="PNG")
-        return base64.b64encode(buffer.getvalue()).decode("utf-8")
+        img_bytes = buffer.getvalue()
+        if not isinstance(img_bytes, bytes):
+            print(
+                f"Error: buffer.getvalue() did not return bytes for page {page_number} in {pdf_document.name}. Type: {type(img_bytes)}"
+            )
+            return None
+        return base64.b64encode(img_bytes).decode("utf-8")
     except Exception as e:
         print(f"Error converting page {page_number} to base64: {e}")
         return None

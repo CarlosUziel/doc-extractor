@@ -1,0 +1,72 @@
+{
+  "realty_address": {
+    "street_number": "2372",
+    "street_number_bbox": {
+      "ymin": 202,
+      "xmin": 160,
+      "ymax": 222,
+      "xmax": 180,
+      "page_number": 0
+    },
+    "street_name": "Ziegelweg",
+    "street_name_bbox": {
+      "ymin": 226,
+      "xmin": 160,
+      "ymax": 246,
+      "xmax": 200,
+      "page_number": 0
+    },
+    "zip_code": "2372",
+    "zip_code_bbox": {
+      "ymin": 250,
+      "xmin": 160,
+      "ymax": 270,
+      "xmax": 180,
+      "page_number": 0
+    },
+    "city": "Wilhelmsburg",
+    "city_bbox": {
+      "ymin": 274,
+      "xmin": 160,
+      "ymax": 294,
+      "xmax": 200,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 296.3,
+  "living_area_sqm_bbox": {
+    "ymin": 100,
+    "xmin": 160,
+    "ymax": 120,
+    "xmax": 180,
+    "page_number": 1
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 150,
+    "xmin": 160,
+    "ymax": 170,
+    "xmax": 180,
+    "page_number": 0
+  },
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "epc_date": "2013-09-11",
+  "epc_date_bbox": {
+    "ymin": 300,
+    "xmin": 160,
+    "ymax": 320,
+    "xmax": 200,
+    "page_number": 1
+  },
+  "epc_date_valid_until": "2023-09-10",
+  "epc_date_valid_until_bbox": {
+    "ymin": 320,
+    "xmin": 160,
+    "ymax": 340,
+    "xmax": 200,
+    "page_number": 1
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "realty_address": {
+    "street_number": "74b",
+    "street_number_bbox": {
+      "ymin": 228,
+      "xmin": 374,
+      "ymax": 241,
+      "xmax": 396,
+      "page_number": 0
+    },
+    "street_name": "Leibingberg",
+    "street_name_bbox": {
+      "ymin": 228,
+      "xmin": 300,
+      "ymax": 241,
+      "xmax": 371,
+      "page_number": 0
+    },
+    "zip_code": "9967",
+    "zip_code_bbox": {
+      "ymin": 242,
+      "xmin": 300,
+      "ymax": 255,
+      "xmax": 334,
+      "page_number": 0
+    },
+    "city": "Imst",
+    "city_bbox": {
+      "ymin": 242,
+      "xmin": 341,
+      "ymax": 255,
+      "xmax": 370,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 145.0,
+  "living_area_sqm_bbox": {
+    "ymin": 169,
+    "xmin": 213,
+    "ymax": 182,
+    "xmax": 246,
+    "page_number": 1
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 198,
+    "xmin": 300,
+    "ymax": 211,
+    "xmax": 396,
+    "page_number": 0
+  },
+  "year_of_built": 2016,
+  "year_of_built_bbox": {
+    "ymin": 171,
+    "xmin": 712,
+    "ymax": 184,
+    "xmax": 746,
+    "page_number": 0
+  },
+  "epc_date": "2016-01-07",
+  "epc_date_bbox": {
+    "ymin": 671,
+    "xmin": 213,
+    "ymax": 684,
+    "xmax": 279,
+    "page_number": 1
+  },
+  "epc_date_valid_until": null,
+  "epc_date_valid_until_bbox": null
+}

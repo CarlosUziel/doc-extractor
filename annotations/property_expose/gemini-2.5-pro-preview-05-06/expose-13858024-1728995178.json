@@ -1,0 +1,80 @@
+{
+  "realty_address": {
+    "street_number": null,
+    "street_number_bbox": null,
+    "street_name": "Flötzersteig",
+    "street_name_bbox": {
+      "ymin": 204,
+      "xmin": 197,
+      "ymax": 215,
+      "xmax": 266,
+      "page_number": 0
+    },
+    "zip_code": "1140",
+    "zip_code_bbox": {
+      "ymin": 188,
+      "xmin": 70,
+      "ymax": 200,
+      "xmax": 106,
+      "page_number": 0
+    },
+    "city": "Wien",
+    "city_bbox": {
+      "ymin": 188,
+      "xmin": 110,
+      "ymax": 200,
+      "xmax": 146,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 91,
+  "epc_before_renovations_bbox": {
+    "ymin": 647,
+    "xmin": 734,
+    "ymax": 659,
+    "xmax": 767,
+    "page_number": 0
+  },
+  "living_area_sqm": 70.0,
+  "living_area_sqm_bbox": {
+    "ymin": 262,
+    "xmin": 621,
+    "ymax": 274,
+    "xmax": 639,
+    "page_number": 0
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 153,
+    "xmin": 200,
+    "ymax": 169,
+    "xmax": 349,
+    "page_number": 0
+  },
+  "year_of_built": 1940,
+  "year_of_built_bbox": {
+    "ymin": 351,
+    "xmin": 637,
+    "ymax": 363,
+    "xmax": 670,
+    "page_number": 0
+  },
+  "realty_features": null,
+  "realty_features_bbox": null,
+  "surface": 429.0,
+  "surface_bbox": {
+    "ymin": 277,
+    "xmin": 624,
+    "ymax": 289,
+    "xmax": 650,
+    "page_number": 0
+  },
+  "price": 448000.0,
+  "price_bbox": {
+    "ymin": 455,
+    "xmin": 838,
+    "ymax": 469,
+    "xmax": 927,
+    "page_number": 0
+  }
+}

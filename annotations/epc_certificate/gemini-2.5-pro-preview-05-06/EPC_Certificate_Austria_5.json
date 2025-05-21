@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "37",
+    "street_number_bbox": {
+      "ymin": 196,
+      "xmin": 327,
+      "ymax": 207,
+      "xmax": 343,
+      "page_number": 0
+    },
+    "street_name": "Schoberstraße",
+    "street_name_bbox": {
+      "ymin": 196,
+      "xmin": 224,
+      "ymax": 207,
+      "xmax": 312,
+      "page_number": 0
+    },
+    "zip_code": "5362",
+    "zip_code_bbox": {
+      "ymin": 219,
+      "xmin": 224,
+      "ymax": 230,
+      "xmax": 259,
+      "page_number": 0
+    },
+    "city": "Völkermarkt",
+    "city_bbox": {
+      "ymin": 219,
+      "xmin": 266,
+      "ymax": 230,
+      "xmax": 344,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 50,
+  "epc_before_renovations_bbox": {
+    "ymin": 462,
+    "xmin": 715,
+    "ymax": 476,
+    "xmax": 747,
+    "page_number": 0
+  },
+  "living_area_sqm": 661.0,
+  "living_area_sqm_bbox": {
+    "ymin": 161,
+    "xmin": 405,
+    "ymax": 172,
+    "xmax": 438,
+    "page_number": 1
+  },
+  "realty_type": "warehouse",
+  "realty_type_bbox": {
+    "ymin": 41,
+    "xmin": 334,
+    "ymax": 59,
+    "xmax": 615,
+    "page_number": 0
+  },
+  "year_of_built": 1979,
+  "year_of_built_bbox": {
+    "ymin": 151,
+    "xmin": 713,
+    "ymax": 162,
+    "xmax": 747,
+    "page_number": 0
+  },
+  "epc_date": "2013-06-28",
+  "epc_date_bbox": {
+    "ymin": 718,
+    "xmin": 665,
+    "ymax": 728,
+    "xmax": 731,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2023-06-27",
+  "epc_date_valid_until_bbox": {
+    "ymin": 734,
+    "xmin": 665,
+    "ymax": 744,
+    "xmax": 731,
+    "page_number": 0
+  }
+}

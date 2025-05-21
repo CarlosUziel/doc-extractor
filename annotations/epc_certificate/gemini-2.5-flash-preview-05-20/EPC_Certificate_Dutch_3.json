@@ -1,0 +1,78 @@
+{
+  "realty_address": {
+    "street_number": "55",
+    "street_number_bbox": {
+      "ymin": 195,
+      "xmin": 172,
+      "ymax": 207,
+      "xmax": 191,
+      "page_number": 0
+    },
+    "street_name": "Louisweg",
+    "street_name_bbox": {
+      "ymin": 179,
+      "xmin": 171,
+      "ymax": 191,
+      "xmax": 228,
+      "page_number": 0
+    },
+    "zip_code": "2030",
+    "zip_code_bbox": {
+      "ymin": 211,
+      "xmin": 170,
+      "ymax": 223,
+      "xmax": 206,
+      "page_number": 0
+    },
+    "city": "Antwerpen",
+    "city_bbox": {
+      "ymin": 211,
+      "xmin": 279,
+      "ymax": 223,
+      "xmax": 345,
+      "page_number": 4
+    }
+  },
+  "epc_before_renovations": 228,
+  "epc_before_renovations_bbox": {
+    "ymin": 341,
+    "xmin": 194,
+    "ymax": 420,
+    "xmax": 380,
+    "page_number": 0
+  },
+  "living_area_sqm": 105.598,
+  "living_area_sqm_bbox": {
+    "ymin": 512,
+    "xmin": 309,
+    "ymax": 524,
+    "xmax": 367,
+    "page_number": 4
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 247,
+    "xmin": 170,
+    "ymax": 259,
+    "xmax": 270,
+    "page_number": 0
+  },
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "epc_date": "2015-10-26",
+  "epc_date_bbox": {
+    "ymin": 780,
+    "xmin": 139,
+    "ymax": 792,
+    "xmax": 214,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2026-10-12",
+  "epc_date_valid_until_bbox": {
+    "ymin": 914,
+    "xmin": 686,
+    "ymax": 927,
+    "xmax": 789,
+    "page_number": 0
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "realty_address": {
+    "street_number": "14",
+    "street_number_bbox": {
+      "ymin": 191,
+      "xmin": 178,
+      "ymax": 206,
+      "xmax": 198,
+      "page_number": 0
+    },
+    "street_name": "Vandenberghehof",
+    "street_name_bbox": {
+      "ymin": 172,
+      "xmin": 178,
+      "ymax": 187,
+      "xmax": 300,
+      "page_number": 0
+    },
+    "zip_code": "6717",
+    "zip_code_bbox": {
+      "ymin": 211,
+      "xmin": 178,
+      "ymax": 226,
+      "xmax": 213,
+      "page_number": 0
+    },
+    "city": "Nieuwpoort",
+    "city_bbox": {
+      "ymin": 211,
+      "xmin": 271,
+      "ymax": 226,
+      "xmax": 337,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 179,
+  "epc_before_renovations_bbox": {
+    "ymin": 350,
+    "xmin": 305,
+    "ymax": 377,
+    "xmax": 346,
+    "page_number": 0
+  },
+  "living_area_sqm": 153.39,
+  "living_area_sqm_bbox": {
+    "ymin": 367,
+    "xmin": 284,
+    "ymax": 382,
+    "xmax": 336,
+    "page_number": 3
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 251,
+    "xmin": 178,
+    "ymax": 266,
+    "xmax": 305,
+    "page_number": 0
+  },
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "epc_date": "2017-03-24",
+  "epc_date_bbox": {
+    "ymin": 765,
+    "xmin": 178,
+    "ymax": 779,
+    "xmax": 266,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2028-03-21",
+  "epc_date_valid_until_bbox": {
+    "ymin": 893,
+    "xmin": 712,
+    "ymax": 908,
+    "xmax": 822,
+    "page_number": 0
+  }
+}

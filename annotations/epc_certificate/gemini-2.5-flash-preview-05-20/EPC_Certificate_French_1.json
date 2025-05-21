@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "122",
+    "street_number_bbox": {
+      "ymin": 184,
+      "xmin": 336,
+      "ymax": 197,
+      "xmax": 360,
+      "page_number": 0
+    },
+    "street_name": "Rue du Midi",
+    "street_name_bbox": {
+      "ymin": 184,
+      "xmin": 216,
+      "ymax": 197,
+      "xmax": 334,
+      "page_number": 0
+    },
+    "zip_code": "1000",
+    "zip_code_bbox": {
+      "ymin": 199,
+      "xmin": 216,
+      "ymax": 212,
+      "xmax": 247,
+      "page_number": 0
+    },
+    "city": "Bruxelles",
+    "city_bbox": {
+      "ymin": 199,
+      "xmin": 249,
+      "ymax": 212,
+      "xmax": 318,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 250,
+  "epc_before_renovations_bbox": {
+    "ymin": 866,
+    "xmin": 622,
+    "ymax": 879,
+    "xmax": 649,
+    "page_number": 0
+  },
+  "living_area_sqm": 138.0,
+  "living_area_sqm_bbox": {
+    "ymin": 301,
+    "xmin": 216,
+    "ymax": 314,
+    "xmax": 250,
+    "page_number": 0
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 86,
+    "xmin": 400,
+    "ymax": 101,
+    "xmax": 589,
+    "page_number": 0
+  },
+  "year_of_built": 1933,
+  "year_of_built_bbox": {
+    "ymin": 838,
+    "xmin": 671,
+    "ymax": 851,
+    "xmax": 704,
+    "page_number": 6
+  },
+  "epc_date": "2022-03-01",
+  "epc_date_bbox": {
+    "ymin": 780,
+    "xmin": 780,
+    "ymax": 793,
+    "xmax": 852,
+    "page_number": 5
+  },
+  "epc_date_valid_until": "2031-02-26",
+  "epc_date_valid_until_bbox": {
+    "ymin": 101,
+    "xmin": 712,
+    "ymax": 116,
+    "xmax": 893,
+    "page_number": 0
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "realty_address": {
+    "street_number": "8a",
+    "street_number_bbox": {
+      "ymin": 254,
+      "xmin": 272,
+      "ymax": 263,
+      "xmax": 285,
+      "page_number": 0
+    },
+    "street_name": "Waldstraße",
+    "street_name_bbox": {
+      "ymin": 254,
+      "xmin": 213,
+      "ymax": 263,
+      "xmax": 269,
+      "page_number": 0
+    },
+    "zip_code": "9063",
+    "zip_code_bbox": {
+      "ymin": 271,
+      "xmin": 213,
+      "ymax": 280,
+      "xmax": 242,
+      "page_number": 0
+    },
+    "city": "Ferlach",
+    "city_bbox": {
+      "ymin": 271,
+      "xmin": 248,
+      "ymax": 280,
+      "xmax": 288,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 878.65,
+  "living_area_sqm_bbox": {
+    "ymin": 237,
+    "xmin": 287,
+    "ymax": 247,
+    "xmax": 329,
+    "page_number": 1
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 237,
+    "xmin": 213,
+    "ymax": 247,
+    "xmax": 307,
+    "page_number": 0
+  },
+  "year_of_built": 2020,
+  "year_of_built_bbox": {
+    "ymin": 237,
+    "xmin": 761,
+    "ymax": 247,
+    "xmax": 789,
+    "page_number": 0
+  },
+  "epc_date": "2020-04-02",
+  "epc_date_bbox": {
+    "ymin": 814,
+    "xmin": 214,
+    "ymax": 824,
+    "xmax": 273,
+    "page_number": 1
+  },
+  "epc_date_valid_until": "2030-04-02",
+  "epc_date_valid_until_bbox": {
+    "ymin": 831,
+    "xmin": 214,
+    "ymax": 841,
+    "xmax": 275,
+    "page_number": 1
+  }
+}

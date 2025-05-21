@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "91",
+    "street_number_bbox": {
+      "ymin": 188,
+      "xmin": 176,
+      "ymax": 206,
+      "xmax": 194,
+      "page_number": 0
+    },
+    "street_name": "Lauwerspad",
+    "street_name_bbox": {
+      "ymin": 170,
+      "xmin": 176,
+      "ymax": 188,
+      "xmax": 256,
+      "page_number": 0
+    },
+    "zip_code": "9235",
+    "zip_code_bbox": {
+      "ymin": 206,
+      "xmin": 176,
+      "ymax": 224,
+      "xmax": 213,
+      "page_number": 0
+    },
+    "city": "Durbuy",
+    "city_bbox": {
+      "ymin": 206,
+      "xmin": 290,
+      "ymax": 224,
+      "xmax": 342,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 380,
+  "epc_before_renovations_bbox": {
+    "ymin": 323,
+    "xmin": 104,
+    "ymax": 414,
+    "xmax": 467,
+    "page_number": 0
+  },
+  "living_area_sqm": 150.0,
+  "living_area_sqm_bbox": {
+    "ymin": 240,
+    "xmin": 232,
+    "ymax": 254,
+    "xmax": 277,
+    "page_number": 2
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 240,
+    "xmin": 176,
+    "ymax": 258,
+    "xmax": 291,
+    "page_number": 0
+  },
+  "year_of_built": 1960,
+  "year_of_built_bbox": {
+    "ymin": 188,
+    "xmin": 232,
+    "ymax": 202,
+    "xmax": 266,
+    "page_number": 2
+  },
+  "epc_date": "2008-11-01",
+  "epc_date_bbox": {
+    "ymin": 774,
+    "xmin": 103,
+    "ymax": 789,
+    "xmax": 188,
+    "page_number": 0
+  },
+  "epc_date_valid_until": "2018-11-01",
+  "epc_date_valid_until_bbox": {
+    "ymin": 916,
+    "xmin": 781,
+    "ymax": 930,
+    "xmax": 894,
+    "page_number": 0
+  }
+}

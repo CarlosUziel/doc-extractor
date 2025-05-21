@@ -1,0 +1,74 @@
+{
+  "realty_address": {
+    "street_number": "48",
+    "street_number_bbox": {
+      "ymin": 428,
+      "xmin": 251,
+      "ymax": 445,
+      "xmax": 267,
+      "page_number": 0
+    },
+    "street_name": "Chemin de Bas Ransbeeck",
+    "street_name_bbox": {
+      "ymin": 428,
+      "xmin": 274,
+      "ymax": 445,
+      "xmax": 488,
+      "page_number": 0
+    },
+    "zip_code": "1910",
+    "zip_code_bbox": {
+      "ymin": 428,
+      "xmin": 583,
+      "ymax": 445,
+      "xmax": 600,
+      "page_number": 0
+    },
+    "city": "La Hulpe",
+    "city_bbox": {
+      "ymin": 428,
+      "xmin": 491,
+      "ymax": 445,
+      "xmax": 580,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": null,
+  "epc_before_renovations_bbox": null,
+  "living_area_sqm": 165.0,
+  "living_area_sqm_bbox": {
+    "ymin": 528,
+    "xmin": 251,
+    "ymax": 545,
+    "xmax": 266,
+    "page_number": 0
+  },
+  "realty_type": "house",
+  "realty_type_bbox": {
+    "ymin": 38,
+    "xmin": 251,
+    "ymax": 55,
+    "xmax": 280,
+    "page_number": 0
+  },
+  "year_of_built": null,
+  "year_of_built_bbox": null,
+  "realty_features": null,
+  "realty_features_bbox": null,
+  "surface": 1650.0,
+  "surface_bbox": {
+    "ymin": 528,
+    "xmin": 287,
+    "ymax": 545,
+    "xmax": 326,
+    "page_number": 0
+  },
+  "price": 695000.0,
+  "price_bbox": {
+    "ymin": 664,
+    "xmin": 450,
+    "ymax": 681,
+    "xmax": 547,
+    "page_number": 0
+  }
+}

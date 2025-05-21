@@ -1,0 +1,84 @@
+{
+  "realty_address": {
+    "street_number": "220",
+    "street_number_bbox": {
+      "ymin": 196,
+      "xmin": 219,
+      "ymax": 206,
+      "xmax": 247,
+      "page_number": 0
+    },
+    "street_name": "Rue Marie-Christine",
+    "street_name_bbox": {
+      "ymin": 183,
+      "xmin": 219,
+      "ymax": 193,
+      "xmax": 350,
+      "page_number": 0
+    },
+    "zip_code": "1020",
+    "zip_code_bbox": {
+      "ymin": 209,
+      "xmin": 219,
+      "ymax": 218,
+      "xmax": 257,
+      "page_number": 0
+    },
+    "city": "Bruxelles",
+    "city_bbox": {
+      "ymin": 209,
+      "xmin": 260,
+      "ymax": 218,
+      "xmax": 326,
+      "page_number": 0
+    }
+  },
+  "epc_before_renovations": 334,
+  "epc_before_renovations_bbox": {
+    "ymin": 866,
+    "xmin": 334,
+    "ymax": 876,
+    "xmax": 362,
+    "page_number": 0
+  },
+  "living_area_sqm": 60.0,
+  "living_area_sqm_bbox": {
+    "ymin": 304,
+    "xmin": 219,
+    "ymax": 314,
+    "xmax": 236,
+    "page_number": 0
+  },
+  "realty_type": "apartment",
+  "realty_type_bbox": {
+    "ymin": 235,
+    "xmin": 88,
+    "ymax": 245,
+    "xmax": 168,
+    "page_number": 0
+  },
+  "year_of_built": 1945,
+  "year_of_built_bbox": {
+    "ymin": 461,
+    "xmin": 712,
+    "ymax": 472,
+    "xmax": 746,
+    "page_number": 7
+  },
+  "epc_date": "2019-04-18",
+  "epc_date_bbox": {
+    "ymin": 388,
+    "xmin": 153,
+    "ymax": 399,
+    "xmax": 226,
+    "page_number": 7
+  },
+  "epc_date_valid_until": "2032-05-14",
+  "epc_date_valid_until_bbox": {
+    "ymin": 104,
+    "xmin": 772,
+    "ymax": 115,
+    "xmax": 846,
+    "page_number": 0
+  }
+}
