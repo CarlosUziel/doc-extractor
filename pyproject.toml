@@ -20,4 +20,5 @@ dependencies = [
     "loguru>=0.7.3",
     "typer>=0.15.4",
     "rich>=14.0.0",
+    "pre-commit>=4.2.0",
 ]
