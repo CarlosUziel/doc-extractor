@@ -97,6 +97,11 @@ Before you begin, ensure you have the following installed:
     uv sync
     ```
 
+3. Alternatively, you can use pip to install the dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Usage
