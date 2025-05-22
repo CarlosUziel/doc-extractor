@@ -44,6 +44,7 @@
     <li><a href="#-performance-analysis-and-llm-comparison">📊 Performance Analysis and LLM Comparison</a></li>
     <li><a href="#-license">📄 License</a></li>
     <li><a href="#-additional-notes">📝 Additional Notes</a></li>
+    <li><a href="#-potential-improvements-and-future-work">💡 Potential Improvements and Future Work</a></li>
     <li><a href="#-contact">👤 Contact</a></li>
     <li><a href="#-acknowledgments">🙏 Acknowledgments</a></li>
   </ol>
@@ -387,6 +388,9 @@ To further enhance the `doc-extractor`'s accuracy, efficiency, and maintainabili
     *   Explore the use of agentic frameworks to iteratively refine the extraction process. This could involve:
         *   Using an agent to analyze the output and suggest improvements or corrections.
         *   Allowing the agent to interact with the document and the LLM in a more dynamic way, potentially leading to better results.
+
+6.  **Incorporate promising Open-Source Visual Document Models/Frameworks**:
+    * Specifically evaluate and integrate models like [ColPali](https://huggingface.co/vidore/colpali-v1.3), the [LayoutLM](https://huggingface.co/microsoft/layoutlmv3-base) series (LayoutLM, LayoutLMv2, LayoutLMv3), and frameworks such as [Docling](https://github.com/docling-project/docling).
 
 By focusing on these areas, `doc-extractor` can become a more robust, transparent, and cost-effective solution.
 
