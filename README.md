@@ -211,9 +211,9 @@ The project includes scripts to facilitate the benchmarking of different LLM pro
     ```
     This command will process up to 10 documents for each document type found in `.data/` using the specified Gemini model and save the outputs in the `annotations/` directory, structured by document type and model name.
 
-    > [!NOTE]
-    >
-    > Refer to the script's help (`python src/benchmark/generate_predictions.py --help`) for more details on available commands and options.
+> [!NOTE]
+>
+> Refer to the script's help (`python src/benchmark/generate_predictions.py --help`) for more details on available commands and options.
 
 2.  **Evaluate Predictions**:
     Use `src/benchmark/evaluate_predictions.py` to analyze the generated predictions. This script can calculate metrics like missing values and compare outputs against a ground truth dataset (if available) or between different models.
@@ -229,9 +229,9 @@ The project includes scripts to facilitate the benchmarking of different LLM pro
     ```bash
     python src/benchmark/evaluate_predictions.py --ground-truth-model-name gemini-2.5-pro-preview-05-06 --test-model-name gpt-4o-mini
     ```
-    > [!NOTE]
-    >
-    > Refer to the script's help (`python src/benchmark/evaluate_predictions.py --help`) for more details on available commands and options.
+> [!NOTE]
+>
+> Refer to the script's help (`python src/benchmark/evaluate_predictions.py --help`) for more details on available commands and options.
 
     
 
