@@ -212,6 +212,7 @@ The project includes scripts to facilitate the benchmarking of different LLM pro
     This command will process up to 10 documents for each document type found in `.data/` using the specified Gemini model and save the outputs in the `annotations/` directory, structured by document type and model name.
 
     > [!NOTE]
+    >
     > Refer to the script's help (`python src/benchmark/generate_predictions.py --help`) for more details on available commands and options.
 
 2.  **Evaluate Predictions**:
@@ -229,6 +230,7 @@ The project includes scripts to facilitate the benchmarking of different LLM pro
     python src/benchmark/evaluate_predictions.py --ground-truth-model-name gemini-2.5-pro-preview-05-06 --test-model-name gpt-4o-mini
     ```
     > [!NOTE]
+    >
     > Refer to the script's help (`python src/benchmark/evaluate_predictions.py --help`) for more details on available commands and options.
 
     
@@ -357,6 +359,7 @@ Comparison of `gpt-4o`, `gpt-4o-mini`, and `gemini-2.5-flash-preview-05-20` agai
 
     > [!NOTE]
     > **Why the near consistent 1.0 recall scores?**
+    >
     > The high recall scores (often 1.0) across models for many fields suggest that when the GT has a value, the models are generally able to identify it. However, precision scores are often lower, indicating that the models may be generating too many false positives. This discrepancy could be due to the models being overly confident in their predictions or the complexity of the document structures leading to misinterpretations.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
