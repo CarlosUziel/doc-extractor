@@ -357,10 +357,10 @@ Comparison of `gpt-4o`, `gpt-4o-mini`, and `gemini-2.5-flash-preview-05-20` agai
 *   **Conclusionss**:
     *   The results indicate that while all models have strengths, `gemini-2.5-flash-preview-05-20` consistently outperforms the others in many fields, particularly in terms of accuracy and precision. `gpt-4o` is a strong contender, and the `gpt-4o-mini` model generally lags behind the other two but can still be useful for specific tasks.
 
-    > [!NOTE]
-    > **Why the near consistent 1.0 recall scores?**
-    >
-    > The high recall scores (often 1.0) across models for many fields suggest that when the GT has a value, the models are generally able to identify it. However, precision scores are often lower, indicating that the models may be generating too many false positives. This discrepancy could be due to the models being overly confident in their predictions or the complexity of the document structures leading to misinterpretations.
+> [!NOTE]
+> **Why the near consistent 1.0 recall scores?**
+>
+> The high recall scores (often 1.0) across models for many fields suggest that when the GT has a value, the models are generally able to identify it. However, precision scores are often lower, indicating that the models may be generating too many false positives. This discrepancy could be due to the models being overly confident in their predictions or the complexity of the document structures leading to misinterpretations.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
