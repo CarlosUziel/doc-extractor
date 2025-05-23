@@ -250,7 +250,9 @@ The evaluation methodology is as follows:
     *   `gpt-4o`
     *   `gpt-4o-mini`
     *   `gemini-2.5-flash-preview-05-20`
+    
     The specific models and document types covered in the tables below depend on the available evaluation data at the time of generation.
+
 3.  **Metrics**: The comparison focuses on standard classification metrics for each extracted field:
     *   **TP (True Positives)**: The model correctly extracted a value that matches the GT, and both are non-null.
     *   **FP (False Positives)**: The model extracted a value, but it either doesn't match the GT, or the GT was null and the model predicted a value.
